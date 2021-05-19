@@ -290,22 +290,7 @@
               <h2 id="AJAX是什么？"><a href="#AJAX是什么？" class="headerlink" title="AJAX是什么？"></a>AJAX是什么？</h2><pre><code>全拼： Asynchronous Javascript And Xml
 就是javascript脚本语言发起HTTP通信请求</code></pre>
 <h2 id="ajax-异步通信是什么？"><a href="#ajax-异步通信是什么？" class="headerlink" title="ajax 异步通信是什么？"></a>ajax 异步通信是什么？</h2><pre><code>就是请求服务器返回数据，（早之前服务器是返回XML文档，后来使用JSON返回数据）再将数据提取转换，在不刷新整个页面的基础上，渲染到网页相应的位置。（操作Dom来渲染局部）</code></pre>
-<h2 id="ajax-发送请求的响应状态码："><a href="#ajax-发送请求的响应状态码：" class="headerlink" title="ajax 发送请求的响应状态码："></a>ajax 发送请求的响应状态码：</h2><pre><code>![状态码](响应.png)</code></pre>
-<h2 id="使用jQuery封装好的ajax，例如："><a href="#使用jQuery封装好的ajax，例如：" class="headerlink" title="使用jQuery封装好的ajax，例如："></a>使用jQuery封装好的ajax，例如：</h2><body>
- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    $.ajax({
-        url:"https://www.imovietrailer.com/superhero/index/guessULike",
-        method: "post",
-        data: {
-            qq:1134701187
-        },
-        success:(res) =>{
-            console.log(res);
-        }
-    })
-</script>
-</body>
+<h2 id="ajax-发送请求的响应状态码："><a href="#ajax-发送请求的响应状态码：" class="headerlink" title="ajax 发送请求的响应状态码："></a>ajax 发送请求的响应状态码：</h2><p><img src="%E5%93%8D%E5%BA%94.png" alt="状态码"></p>
           
       
     </div>
