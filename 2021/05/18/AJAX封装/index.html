@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/%E5%93%8D%E5%BA%94.png">
 <meta property="article:published_time" content="2021-05-18T10:57:52.000Z">
-<meta property="article:modified_time" content="2021-05-19T01:27:54.599Z">
+<meta property="article:modified_time" content="2021-05-19T01:35:17.056Z">
 <meta property="article:author" content="薛成">
 <meta property="article:tag" content="ajax">
 <meta name="twitter:card" content="summary">
@@ -309,190 +309,10 @@
 <h2 id="ajax-异步通信是什么？"><a href="#ajax-异步通信是什么？" class="headerlink" title="ajax 异步通信是什么？"></a>ajax 异步通信是什么？</h2><pre><code>就是请求服务器返回数据，（早之前服务器是返回XML文档，后来使用JSON返回数据）再将数据提取转换，在不刷新整个页面的基础上，渲染到网页相应的位置。（操作Dom来渲染局部）</code></pre>
 <h2 id="ajax-发送请求的响应状态码："><a href="#ajax-发送请求的响应状态码：" class="headerlink" title="ajax 发送请求的响应状态码："></a>ajax 发送请求的响应状态码：</h2><p><img src="%E5%93%8D%E5%BA%94.png" alt="状态码"></p>
 <a id="more"></a>
-<h2 id="使用jQuery封装好的ajax，例如："><a href="#使用jQuery封装好的ajax，例如：" class="headerlink" title="使用jQuery封装好的ajax，例如："></a>使用jQuery封装好的ajax，例如：</h2><body>
- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    $.ajax({
-        url:"https://www.imovietrailer.com/superhero/index/guessULike",
-        method: "post",
-        data: {
-            qq:1134701187
-        },
-        success:(res) =>{
-            console.log(res);
-        }
-    })
-</script>
-</body>
-
-<h2 id="使用原生的ajax，写法如下，注释标注的很明确了"><a href="#使用原生的ajax，写法如下，注释标注的很明确了" class="headerlink" title="使用原生的ajax，写法如下，注释标注的很明确了"></a>使用原生的ajax，写法如下，注释标注的很明确了</h2><body>
-    <script type="text/javascript">  
-        var xhr;
-        // 首先实例化 XMLHttpRequest 或者 ActiveXObject，这两个是ajax所必需的构造函数。
-        if(window.XMLHttpRequest){
-            xhr = new XMLHttpRequest();
-        } else {
-            xhr = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        // 使用ajax，因为使用了Jquery库，所以可以直接使用
-        // get请求  url地址    是否异步
-        xhr.open('POST','https://www.imovietrailer.com/superhero/index/guessULike',true);
-        // 使用POST请求，如果send中要传参的话，必须要声明 setRequestHeader
-        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-        // send中传参数必须写成字符串形式
-        xhr.send('qq=1134701187');
-        // onreadystatechange 请求的状态属性
-        xhr.onreadystatechange = function(){
-            // 4  表示服务端准备好响应数据   200表示数据响应回来且正确
-            if(xhr.readyState == 4 && xhr.status == 200){
-                // 拿到的是字符串数据，然后使用JSON.parse 转换成JSON对象
-                console.log(JSON.parse(xhr.responseText));
-            }
-        }
-    </script>
-</body>
-
-<h2 id="ajax封装思路，如下"><a href="#ajax封装思路，如下" class="headerlink" title="ajax封装思路，如下"></a>ajax封装思路，如下</h2><body>
-    <h1>分装详情见  03.html</h1>
-    <script type="text/javascript">
-    // 分装方法一   传统方法
-    // 分装对象，调用对象中的属性，  属性是各个函数
-        var $ = {
-            ajax:function(obj){
-                var a = obj.url;
-                console.log(a);
-            },
-            post:function(){
-            },
-            get:function(){
-            }
-        }
-        // console.log($.ajax("ajax"));
-        $.ajax({url:"www.baidu.com"});
-    // 分装方法二  使用函数分装
-    // 使用函数 返回一个对象
-        function $(){
-            return{
-                ajax:function(obj){
-                    var a = obj;
-                    console.log(a);
-                },
-                post:function(){
-                },
-                get:function(){
-                }
-            }
-        }
-        // 调用 
-        // 要使用 $() 是因为必须要执行该函数
-        $().ajax("这是函数分装AJAX");
-        // 为了使用出对象的效果，可以使用  立即执行函数
-        const $ = (function(){
-            return{
-                ajax:function(obj){
-                    var a = obj;
-                    console.log(a);
-                },
-                post:function(){
-                },
-                get:function(){
-                }
-            }
-        })();
-        $.ajax("使用立即执行函数分装");
-    </script>
-</body>
-
-<h2 id="ajax-分装详情"><a href="#ajax-分装详情" class="headerlink" title="ajax 分装详情"></a>ajax 分装详情</h2><body>
-    <script type="text/javascript">
-    // 分装AJAX 全过程，只写了ajax方法
-        const $ = (function(){
-            // 首先实例化对象
-            var o = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");
-        //    不存在抛出一个错误,并且不会执行后边的代码
-            if(!o){
-                throw new Error("您的浏览器版本过低");
-            }
-            // 定义_doAjax函数
-            function _doAjax(obj){
-                // ES6 语法  定义多个变量
-                var obj = obj || {}
-                    type = (obj.type || "GET").toUpperCase(),
-                    url = obj.url,
-                    async = obj.async || true,
-                    data = obj.data || null,
-                    success = obj.success || function(){},
-                    error = obj.error || function(){},
-                    complete = obj.complete || function(){};
-                //没传url地址 ，抛出错误 
-                if(!url){
-                    throw new Error("您没有传入URL地址，无法执行");
-                }
-            // 然后就open
-                o.open(type,url,async);
-                //方式为 POST 的时候，需要加上setRequestHeader
-                //  && 与 运算，就是为真的时候，执行后边的
-                type === "POST" && o.setRequestHeader('Content-type','application/x-www-form-urlencoded'); 
-            // send
-                o.send(type === "GET" ? null : formatData(data)); //将传入的 data 转换为 字符串类型
-                o.onreadystatechange = function(){
-                    if(o.readyState === 4 && o.status === 200){
-                        success(JSON.parse(o.responseText));
-                        complete();
-                    };
-                    // 请求失败，执行error方法
-                    if(o.status === 404){
-                        error();
-                        complete();
-                    };
-                }
-            };
-            // 定义转换data的函数
-            function formatData(data){
-                var str = "";
-                for(var key in data){
-                    str += key + "=" + data[key] + "&";
-                }
-                return str.replace(/&$/,"");   //使用正则表达式，将字符串最后多出来的 & 符号去掉
-            };
-            return{
-            ajax:function(obj){
-                // 如果想将返回的函数中的参数拿到外边使用，可以使用调用函数的方法，将这个参数传出去
-                var obj = obj;
-                _doAjax(obj);
-            },
-            post:function(url,data,success){
-                var obj = {
-                    type:"POST",
-                    url:url,
-                    data:data,
-                    success:success
-                };
-                _doAjax(obj);
-            },
-            get:function(){
-            }
-        }
-        })();
-    // 调用
-    $.ajax({
-        url:"https://www.imovietrailer.com/superhero/index/guessULike",
-        type: "post",
-        data: {
-            qq:1134701187
-        },
-        async:true,
-        success:(res) =>{
-            console.log(res);
-        }
-    });
-    $.post("https://www.imovietrailer.com/superhero/index/guessULike",
-            {qq:1134701187},
-            function(res){
-                console.log("post",res);
-            });
-    </script>
-</body>
+<h2 id="使用jQuery封装好的ajax，例如："><a href="#使用jQuery封装好的ajax，例如：" class="headerlink" title="使用jQuery封装好的ajax，例如："></a>使用jQuery封装好的ajax，例如：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;jquery&#x2F;3.3.1&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url:&quot;https:&#x2F;&#x2F;www.imovietrailer.com&#x2F;superhero&#x2F;index&#x2F;guessULike&quot;,</span><br><span class="line">        method: &quot;post&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            qq:1134701187</span><br><span class="line">        &#125;,</span><br><span class="line">        success:(res) &#x3D;&gt;&#123;</span><br><span class="line">            console.log(res);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="使用原生的ajax，写法如下，注释标注的很明确了"><a href="#使用原生的ajax，写法如下，注释标注的很明确了" class="headerlink" title="使用原生的ajax，写法如下，注释标注的很明确了"></a>使用原生的ajax，写法如下，注释标注的很明确了</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;  </span><br><span class="line">        var xhr;</span><br><span class="line">        &#x2F;&#x2F; 首先实例化 XMLHttpRequest 或者 ActiveXObject，这两个是ajax所必需的构造函数。</span><br><span class="line">        if(window.XMLHttpRequest)&#123;</span><br><span class="line">            xhr &#x3D; new XMLHttpRequest();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            xhr &#x3D; new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 使用ajax，因为使用了Jquery库，所以可以直接使用</span><br><span class="line">        &#x2F;&#x2F; get请求  url地址    是否异步</span><br><span class="line">        xhr.open(&#39;POST&#39;,&#39;https:&#x2F;&#x2F;www.imovietrailer.com&#x2F;superhero&#x2F;index&#x2F;guessULike&#39;,true);</span><br><span class="line">        &#x2F;&#x2F; 使用POST请求，如果send中要传参的话，必须要声明 setRequestHeader</span><br><span class="line">        xhr.setRequestHeader(&#39;Content-type&#39;,&#39;application&#x2F;x-www-form-urlencoded&#39;);</span><br><span class="line">        &#x2F;&#x2F; send中传参数必须写成字符串形式</span><br><span class="line">        xhr.send(&#39;qq&#x3D;1134701187&#39;);</span><br><span class="line">        &#x2F;&#x2F; onreadystatechange 请求的状态属性</span><br><span class="line">        xhr.onreadystatechange &#x3D; function()&#123;</span><br><span class="line">            &#x2F;&#x2F; 4  表示服务端准备好响应数据   200表示数据响应回来且正确</span><br><span class="line">            if(xhr.readyState &#x3D;&#x3D; 4 &amp;&amp; xhr.status &#x3D;&#x3D; 200)&#123;</span><br><span class="line">                &#x2F;&#x2F; 拿到的是字符串数据，然后使用JSON.parse 转换成JSON对象</span><br><span class="line">                console.log(JSON.parse(xhr.responseText));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="ajax封装思路，如下"><a href="#ajax封装思路，如下" class="headerlink" title="ajax封装思路，如下"></a>ajax封装思路，如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;分装详情见  03.html&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    &#x2F;&#x2F; 分装方法一   传统方法</span><br><span class="line">    &#x2F;&#x2F; 分装对象，调用对象中的属性，  属性是各个函数</span><br><span class="line">        var $ &#x3D; &#123;</span><br><span class="line">            ajax:function(obj)&#123;</span><br><span class="line">                var a &#x3D; obj.url;</span><br><span class="line">                console.log(a);</span><br><span class="line">            &#125;,</span><br><span class="line">            post:function()&#123;</span><br><span class="line">            &#125;,</span><br><span class="line">            get:function()&#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; console.log($.ajax(&quot;ajax&quot;));</span><br><span class="line">        $.ajax(&#123;url:&quot;www.baidu.com&quot;&#125;);</span><br><span class="line">    &#x2F;&#x2F; 分装方法二  使用函数分装</span><br><span class="line">    &#x2F;&#x2F; 使用函数 返回一个对象</span><br><span class="line">        function $()&#123;</span><br><span class="line">            return&#123;</span><br><span class="line">                ajax:function(obj)&#123;</span><br><span class="line">                    var a &#x3D; obj;</span><br><span class="line">                    console.log(a);</span><br><span class="line">                &#125;,</span><br><span class="line">                post:function()&#123;</span><br><span class="line">                &#125;,</span><br><span class="line">                get:function()&#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 调用 </span><br><span class="line">        &#x2F;&#x2F; 要使用 $() 是因为必须要执行该函数</span><br><span class="line">        $().ajax(&quot;这是函数分装AJAX&quot;);</span><br><span class="line">        &#x2F;&#x2F; 为了使用出对象的效果，可以使用  立即执行函数</span><br><span class="line">        const $ &#x3D; (function()&#123;</span><br><span class="line">            return&#123;</span><br><span class="line">                ajax:function(obj)&#123;</span><br><span class="line">                    var a &#x3D; obj;</span><br><span class="line">                    console.log(a);</span><br><span class="line">                &#125;,</span><br><span class="line">                post:function()&#123;</span><br><span class="line">                &#125;,</span><br><span class="line">                get:function()&#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)();</span><br><span class="line">        $.ajax(&quot;使用立即执行函数分装&quot;);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="ajax-分装详情"><a href="#ajax-分装详情" class="headerlink" title="ajax 分装详情"></a>ajax 分装详情</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    &#x2F;&#x2F; 分装AJAX 全过程，只写了ajax方法</span><br><span class="line">        const $ &#x3D; (function()&#123;</span><br><span class="line">            &#x2F;&#x2F; 首先实例化对象</span><br><span class="line">            var o &#x3D; window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">        &#x2F;&#x2F;    不存在抛出一个错误,并且不会执行后边的代码</span><br><span class="line">            if(!o)&#123;</span><br><span class="line">                throw new Error(&quot;您的浏览器版本过低&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F; 定义_doAjax函数</span><br><span class="line">            function _doAjax(obj)&#123;</span><br><span class="line">                &#x2F;&#x2F; ES6 语法  定义多个变量</span><br><span class="line">                var obj &#x3D; obj || &#123;&#125;</span><br><span class="line">                    type &#x3D; (obj.type || &quot;GET&quot;).toUpperCase(),</span><br><span class="line">                    url &#x3D; obj.url,</span><br><span class="line">                    async &#x3D; obj.async || true,</span><br><span class="line">                    data &#x3D; obj.data || null,</span><br><span class="line">                    success &#x3D; obj.success || function()&#123;&#125;,</span><br><span class="line">                    error &#x3D; obj.error || function()&#123;&#125;,</span><br><span class="line">                    complete &#x3D; obj.complete || function()&#123;&#125;;</span><br><span class="line">                &#x2F;&#x2F;没传url地址 ，抛出错误 </span><br><span class="line">                if(!url)&#123;</span><br><span class="line">                    throw new Error(&quot;您没有传入URL地址，无法执行&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#x2F;&#x2F; 然后就open</span><br><span class="line">                o.open(type,url,async);</span><br><span class="line">                &#x2F;&#x2F;方式为 POST 的时候，需要加上setRequestHeader</span><br><span class="line">                &#x2F;&#x2F;  &amp;&amp; 与 运算，就是为真的时候，执行后边的</span><br><span class="line">                type &#x3D;&#x3D;&#x3D; &quot;POST&quot; &amp;&amp; o.setRequestHeader(&#39;Content-type&#39;,&#39;application&#x2F;x-www-form-urlencoded&#39;); </span><br><span class="line">            &#x2F;&#x2F; send</span><br><span class="line">                o.send(type &#x3D;&#x3D;&#x3D; &quot;GET&quot; ? null : formatData(data)); &#x2F;&#x2F;将传入的 data 转换为 字符串类型</span><br><span class="line">                o.onreadystatechange &#x3D; function()&#123;</span><br><span class="line">                    if(o.readyState &#x3D;&#x3D;&#x3D; 4 &amp;&amp; o.status &#x3D;&#x3D;&#x3D; 200)&#123;</span><br><span class="line">                        success(JSON.parse(o.responseText));</span><br><span class="line">                        complete();</span><br><span class="line">                    &#125;;</span><br><span class="line">                    &#x2F;&#x2F; 请求失败，执行error方法</span><br><span class="line">                    if(o.status &#x3D;&#x3D;&#x3D; 404)&#123;</span><br><span class="line">                        error();</span><br><span class="line">                        complete();</span><br><span class="line">                    &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            &#x2F;&#x2F; 定义转换data的函数</span><br><span class="line">            function formatData(data)&#123;</span><br><span class="line">                var str &#x3D; &quot;&quot;;</span><br><span class="line">                for(var key in data)&#123;</span><br><span class="line">                    str +&#x3D; key + &quot;&#x3D;&quot; + data[key] + &quot;&amp;&quot;;</span><br><span class="line">                &#125;</span><br><span class="line">                return str.replace(&#x2F;&amp;$&#x2F;,&quot;&quot;);   &#x2F;&#x2F;使用正则表达式，将字符串最后多出来的 &amp; 符号去掉</span><br><span class="line">            &#125;;</span><br><span class="line">            return&#123;</span><br><span class="line">            ajax:function(obj)&#123;</span><br><span class="line">                &#x2F;&#x2F; 如果想将返回的函数中的参数拿到外边使用，可以使用调用函数的方法，将这个参数传出去</span><br><span class="line">                var obj &#x3D; obj;</span><br><span class="line">                _doAjax(obj);</span><br><span class="line">            &#125;,</span><br><span class="line">            post:function(url,data,success)&#123;</span><br><span class="line">                var obj &#x3D; &#123;</span><br><span class="line">                    type:&quot;POST&quot;,</span><br><span class="line">                    url:url,</span><br><span class="line">                    data:data,</span><br><span class="line">                    success:success</span><br><span class="line">                &#125;;</span><br><span class="line">                _doAjax(obj);</span><br><span class="line">            &#125;,</span><br><span class="line">            get:function()&#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;)();</span><br><span class="line">    &#x2F;&#x2F; 调用</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url:&quot;https:&#x2F;&#x2F;www.imovietrailer.com&#x2F;superhero&#x2F;index&#x2F;guessULike&quot;,</span><br><span class="line">        type: &quot;post&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            qq:1134701187</span><br><span class="line">        &#125;,</span><br><span class="line">        async:true,</span><br><span class="line">        success:(res) &#x3D;&gt;&#123;</span><br><span class="line">            console.log(res);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    $.post(&quot;https:&#x2F;&#x2F;www.imovietrailer.com&#x2F;superhero&#x2F;index&#x2F;guessULike&quot;,</span><br><span class="line">            &#123;qq:1134701187&#125;,</span><br><span class="line">            function(res)&#123;</span><br><span class="line">                console.log(&quot;post&quot;,res);</span><br><span class="line">            &#125;);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -504,7 +324,7 @@
         <p><span>文章作者:</span><a  href="/" title="访问 薛成 的个人博客">薛成</a></p>
         <!-- <a  href="/" title="访问  的个人博客"></a> -->
         <p><span>发布时间:</span>2021年05月18日 - 18时57分</p>
-        <p><span>最后更新:</span>2021年05月19日 - 09时27分</p>
+        <p><span>最后更新:</span>2021年05月19日 - 09时35分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/" title="AJAX封装">http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/</a>
             <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/　　作者: " title=""></span>
@@ -533,7 +353,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">AJAX是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">ajax 异步通信是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E7%9A%84%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">ajax 发送请求的响应状态码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jQuery%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84ajax%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">使用jQuery封装好的ajax，例如：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9F%E7%9A%84ajax%EF%BC%8C%E5%86%99%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%8C%E6%B3%A8%E9%87%8A%E6%A0%87%E6%B3%A8%E7%9A%84%E5%BE%88%E6%98%8E%E7%A1%AE%E4%BA%86"><span class="toc-number">5.</span> <span class="toc-text">使用原生的ajax，写法如下，注释标注的很明确了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax%E5%B0%81%E8%A3%85%E6%80%9D%E8%B7%AF%EF%BC%8C%E5%A6%82%E4%B8%8B"><span class="toc-number">6.</span> <span class="toc-text">ajax封装思路，如下</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">分装详情见  03.html</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%88%86%E8%A3%85%E8%AF%A6%E6%83%85"><span class="toc-number">1.</span> <span class="toc-text">ajax 分装详情</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">AJAX是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">ajax 异步通信是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E7%9A%84%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">ajax 发送请求的响应状态码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jQuery%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84ajax%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">使用jQuery封装好的ajax，例如：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9F%E7%9A%84ajax%EF%BC%8C%E5%86%99%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%8C%E6%B3%A8%E9%87%8A%E6%A0%87%E6%B3%A8%E7%9A%84%E5%BE%88%E6%98%8E%E7%A1%AE%E4%BA%86"><span class="toc-number">5.</span> <span class="toc-text">使用原生的ajax，写法如下，注释标注的很明确了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax%E5%B0%81%E8%A3%85%E6%80%9D%E8%B7%AF%EF%BC%8C%E5%A6%82%E4%B8%8B"><span class="toc-number">6.</span> <span class="toc-text">ajax封装思路，如下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%88%86%E8%A3%85%E8%AF%A6%E6%83%85"><span class="toc-number">7.</span> <span class="toc-text">ajax 分装详情</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
