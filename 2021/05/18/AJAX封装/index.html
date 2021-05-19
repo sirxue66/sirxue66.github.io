@@ -7,18 +7,19 @@
   
   
   
-  <title>git使用 | XueSir Blog</title>
+  <title>AJAX封装 | XueSir Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git的使用git 是什么？git就是： 代码的版本管理工具git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区 配置：1，配置全局用户名： git config –global user.name ‘ ‘2,配置全局邮箱：  git config –global user.email ‘ ‘3,查看配置信息：  git config –">
+  <meta name="description" content="AJAX是什么？全拼： Asynchronous Javascript And Xml 就是javascript脚本语言发起HTTP通信请求 ajax 异步通信是什么？就是请求服务器返回数据，（早之前服务器是返回XML文档，后来使用JSON返回数据）再将数据提取转换，在不刷新整个页面的基础上，渲染到网页相应的位置。（操作Dom来渲染局部） ajax 发送请求的响应状态码：![状态码](响应.png">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用">
-<meta property="og:url" content="http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="AJAX封装">
+<meta property="og:url" content="http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/index.html">
 <meta property="og:site_name" content="XueSir Blog">
-<meta property="og:description" content="git的使用git 是什么？git就是： 代码的版本管理工具git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区 配置：1，配置全局用户名： git config –global user.name ‘ ‘2,配置全局邮箱：  git config –global user.email ‘ ‘3,查看配置信息：  git config –">
+<meta property="og:description" content="AJAX是什么？全拼： Asynchronous Javascript And Xml 就是javascript脚本语言发起HTTP通信请求 ajax 异步通信是什么？就是请求服务器返回数据，（早之前服务器是返回XML文档，后来使用JSON返回数据）再将数据提取转换，在不刷新整个页面的基础上，渲染到网页相应的位置。（操作Dom来渲染局部） ajax 发送请求的响应状态码：![状态码](响应.png">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-13T01:46:37.000Z">
-<meta property="article:modified_time" content="2021-04-13T02:50:51.663Z">
+<meta property="article:published_time" content="2021-05-18T10:57:52.000Z">
+<meta property="article:modified_time" content="2021-05-19T01:20:47.572Z">
 <meta property="article:author" content="薛成">
+<meta property="article:tag" content="ajax">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
@@ -257,11 +258,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-git使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-AJAX封装" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/13/git%E4%BD%BF%E7%94%A8/" class="article-date">
-      <time datetime="2021-04-13T01:46:37.000Z" itemprop="datePublished">2021-04-13</time>
+      <a  href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/" class="article-date">
+      <time datetime="2021-05-18T10:57:52.000Z" itemprop="datePublished">2021-05-18</time>
 </a>
 
     </div>
@@ -275,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git使用
+      AJAX封装
     </h1>
   
 
@@ -290,6 +291,10 @@
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -297,17 +302,195 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h2><h3 id="git-是什么？"><a href="#git-是什么？" class="headerlink" title="git 是什么？"></a>git 是什么？</h3><p>git就是： 代码的版本管理工具<br>git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区</p>
-<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><p>1，配置全局用户名： git config –global user.name ‘ ‘<br>2,配置全局邮箱：  git config –global user.email ‘ ‘<br>3,查看配置信息：  git config –list</p>
-<h3 id="增加-工作区—-gt-暂存区"><a href="#增加-工作区—-gt-暂存区" class="headerlink" title="增加    工作区—-&gt;暂存区"></a>增加    工作区—-&gt;暂存区</h3><p>1,增加所有更新文件： git add .<br>2,增加指定文件： git add 文件名</p>
-<h3 id="提交-暂存区—–-gt-版本区"><a href="#提交-暂存区—–-gt-版本区" class="headerlink" title="提交      暂存区—–&gt;版本区"></a>提交      暂存区—–&gt;版本区</h3><p>git commit -m “说明”</p>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>1,查看状态（工作区与暂存区之间的状态）： git status<br>2,查看提交记录（暂存区提交到版本区的提交记录）：git log</p>
-<a id="more"></a>
-<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>1，比较暂存区与工作区的差别： git diff<br>2，比较暂存区与版本区的差别： git diff –cached<br>3，比较工作区与版本区的差别： git diff master</p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>1，当暂存区与版本区内容不一致，可以重置，也就是让版本区的内容覆盖暂存区，相当于撤销add操作：<br>    撤销指定文件：  git reset HEAD 文件名<br>    撤销最近提交的： git reset HEAD<br>2，暂存区内容覆盖工作区内容，暂存区没有的话，版本区内容覆盖工作区：  git checkout<br>3，删除暂存区文件： git rm 文件名 –cached<br>4，恢复版本区指定版本到工作区：（版本号就是提交log中的提交号，前七位就可以）： git reset –hard 版本号<br>5，查看提交的版本号前七位：  git reflog<br>6，删除版本区： 删除.git文件即可，   之后再 git init </p>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>1，查看分支： git branch     查看所欲分支： git branch -a<br>2，创建分支： git branch 分支名<br>3，删除本地分支：  git branch -d 分支名     删除远程分支：  git push origin :分支名<br>4，切换分支： git checkout 分支名<br>5，创建并切换到创建分支：  git checkout -b 分支名</p>
-<h3 id="一般工作流程"><a href="#一般工作流程" class="headerlink" title="一般工作流程"></a>一般工作流程</h3><p>1，写完代码后add：  git add .<br>2，提交： git commit -m “说明”<br>3，上传到远程仓库：  git push origin 本地分支：远程分支    （远程没有这个分支，会自动创建）<br>4，将远程分支代码拉取到本地：  git pull origin 远程分支名<br>   将远程分支代码拉取下来并合并：   git pull –rabase origin 远程分支</p>
+        <h2 id="AJAX是什么？"><a href="#AJAX是什么？" class="headerlink" title="AJAX是什么？"></a>AJAX是什么？</h2><pre><code>全拼： Asynchronous Javascript And Xml
+就是javascript脚本语言发起HTTP通信请求</code></pre>
+<h2 id="ajax-异步通信是什么？"><a href="#ajax-异步通信是什么？" class="headerlink" title="ajax 异步通信是什么？"></a>ajax 异步通信是什么？</h2><pre><code>就是请求服务器返回数据，（早之前服务器是返回XML文档，后来使用JSON返回数据）再将数据提取转换，在不刷新整个页面的基础上，渲染到网页相应的位置。（操作Dom来渲染局部）</code></pre>
+<h2 id="ajax-发送请求的响应状态码："><a href="#ajax-发送请求的响应状态码：" class="headerlink" title="ajax 发送请求的响应状态码："></a>ajax 发送请求的响应状态码：</h2><pre><code>![状态码](响应.png)</code></pre>
+<h2 id="使用jQuery封装好的ajax，例如："><a href="#使用jQuery封装好的ajax，例如：" class="headerlink" title="使用jQuery封装好的ajax，例如："></a>使用jQuery封装好的ajax，例如：</h2><body>
+ <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        url:"https://www.imovietrailer.com/superhero/index/guessULike",
+        method: "post",
+        data: {
+            qq:1134701187
+        },
+        success:(res) =>{
+            console.log(res);
+        }
+    })
+</script>
+</body>
 
+<a id="more"></a>
+<h2 id="使用原生的ajax，写法如下，注释标注的很明确了"><a href="#使用原生的ajax，写法如下，注释标注的很明确了" class="headerlink" title="使用原生的ajax，写法如下，注释标注的很明确了"></a>使用原生的ajax，写法如下，注释标注的很明确了</h2><body>
+    <script type="text/javascript">  
+        var xhr;
+        // 首先实例化 XMLHttpRequest 或者 ActiveXObject，这两个是ajax所必需的构造函数。
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        // 使用ajax，因为使用了Jquery库，所以可以直接使用
+        // get请求  url地址    是否异步
+        xhr.open('POST','https://www.imovietrailer.com/superhero/index/guessULike',true);
+        // 使用POST请求，如果send中要传参的话，必须要声明 setRequestHeader
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        // send中传参数必须写成字符串形式
+        xhr.send('qq=1134701187');
+        // onreadystatechange 请求的状态属性
+        xhr.onreadystatechange = function(){
+            // 4  表示服务端准备好响应数据   200表示数据响应回来且正确
+            if(xhr.readyState == 4 && xhr.status == 200){
+                // 拿到的是字符串数据，然后使用JSON.parse 转换成JSON对象
+                console.log(JSON.parse(xhr.responseText));
+            }
+        }
+    </script>
+</body>
+
+<h2 id="ajax封装思路，如下"><a href="#ajax封装思路，如下" class="headerlink" title="ajax封装思路，如下"></a>ajax封装思路，如下</h2><body>
+    <h1>分装详情见  03.html</h1>
+    <script type="text/javascript">
+    // 分装方法一   传统方法
+    // 分装对象，调用对象中的属性，  属性是各个函数
+        var $ = {
+            ajax:function(obj){
+                var a = obj.url;
+                console.log(a);
+            },
+            post:function(){
+            },
+            get:function(){
+            }
+        }
+        // console.log($.ajax("ajax"));
+        $.ajax({url:"www.baidu.com"});
+    // 分装方法二  使用函数分装
+    // 使用函数 返回一个对象
+        function $(){
+            return{
+                ajax:function(obj){
+                    var a = obj;
+                    console.log(a);
+                },
+                post:function(){
+                },
+                get:function(){
+                }
+            }
+        }
+        // 调用 
+        // 要使用 $() 是因为必须要执行该函数
+        $().ajax("这是函数分装AJAX");
+        // 为了使用出对象的效果，可以使用  立即执行函数
+        const $ = (function(){
+            return{
+                ajax:function(obj){
+                    var a = obj;
+                    console.log(a);
+                },
+                post:function(){
+                },
+                get:function(){
+                }
+            }
+        })();
+        $.ajax("使用立即执行函数分装");
+    </script>
+</body>
+
+<h2 id="ajax-分装详情"><a href="#ajax-分装详情" class="headerlink" title="ajax 分装详情"></a>ajax 分装详情</h2><body>
+    <script type="text/javascript">
+    // 分装AJAX 全过程，只写了ajax方法
+        const $ = (function(){
+            // 首先实例化对象
+            var o = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");
+        //    不存在抛出一个错误,并且不会执行后边的代码
+            if(!o){
+                throw new Error("您的浏览器版本过低");
+            }
+            // 定义_doAjax函数
+            function _doAjax(obj){
+                // ES6 语法  定义多个变量
+                var obj = obj || {}
+                    type = (obj.type || "GET").toUpperCase(),
+                    url = obj.url,
+                    async = obj.async || true,
+                    data = obj.data || null,
+                    success = obj.success || function(){},
+                    error = obj.error || function(){},
+                    complete = obj.complete || function(){};
+                //没传url地址 ，抛出错误 
+                if(!url){
+                    throw new Error("您没有传入URL地址，无法执行");
+                }
+            // 然后就open
+                o.open(type,url,async);
+                //方式为 POST 的时候，需要加上setRequestHeader
+                //  && 与 运算，就是为真的时候，执行后边的
+                type === "POST" && o.setRequestHeader('Content-type','application/x-www-form-urlencoded'); 
+            // send
+                o.send(type === "GET" ? null : formatData(data)); //将传入的 data 转换为 字符串类型
+                o.onreadystatechange = function(){
+                    if(o.readyState === 4 && o.status === 200){
+                        success(JSON.parse(o.responseText));
+                        complete();
+                    };
+                    // 请求失败，执行error方法
+                    if(o.status === 404){
+                        error();
+                        complete();
+                    };
+                }
+            };
+            // 定义转换data的函数
+            function formatData(data){
+                var str = "";
+                for(var key in data){
+                    str += key + "=" + data[key] + "&";
+                }
+                return str.replace(/&$/,"");   //使用正则表达式，将字符串最后多出来的 & 符号去掉
+            };
+            return{
+            ajax:function(obj){
+                // 如果想将返回的函数中的参数拿到外边使用，可以使用调用函数的方法，将这个参数传出去
+                var obj = obj;
+                _doAjax(obj);
+            },
+            post:function(url,data,success){
+                var obj = {
+                    type:"POST",
+                    url:url,
+                    data:data,
+                    success:success
+                };
+                _doAjax(obj);
+            },
+            get:function(){
+            }
+        }
+        })();
+    // 调用
+    $.ajax({
+        url:"https://www.imovietrailer.com/superhero/index/guessULike",
+        type: "post",
+        data: {
+            qq:1134701187
+        },
+        async:true,
+        success:(res) =>{
+            console.log(res);
+        }
+    });
+    $.post("https://www.imovietrailer.com/superhero/index/guessULike",
+            {qq:1134701187},
+            function(res){
+                console.log("post",res);
+            });
+    </script>
+</body>
       
     </div>
     
@@ -315,14 +498,14 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2021/04/13/git%E4%BD%BF%E7%94%A8/">git使用</a></p>
+        <p><span>本文标题:</span><a  href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/">AJAX封装</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 薛成 的个人博客">薛成</a></p>
         <!-- <a  href="/" title="访问  的个人博客"></a> -->
-        <p><span>发布时间:</span>2021年04月13日 - 09时46分</p>
-        <p><span>最后更新:</span>2021年04月13日 - 10时50分</p>
+        <p><span>发布时间:</span>2021年05月18日 - 18时57分</p>
+        <p><span>最后更新:</span>2021年05月19日 - 09时20分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/04/13/git%E4%BD%BF%E7%94%A8/" title="git使用">http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/　　作者: " title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/" title="AJAX封装">http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/05/18/AJAX%E5%B0%81%E8%A3%85/　　作者: " title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -334,18 +517,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2021/04/14/css%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          css清除浮动
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86(%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98)-%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">事件代理|事件捕获</div>
+    <a  href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络协议</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -357,7 +531,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">git 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">配置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E2%80%94-gt-%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">增加    工作区—-&gt;暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4-%E6%9A%82%E5%AD%98%E5%8C%BA%E2%80%94%E2%80%93-gt-%E7%89%88%E6%9C%AC%E5%8C%BA"><span class="toc-number">1.4.</span> <span class="toc-text">提交      暂存区—–&gt;版本区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B"><span class="toc-number">1.5.</span> <span class="toc-text">查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83"><span class="toc-number">1.6.</span> <span class="toc-text">比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF"><span class="toc-number">1.8.</span> <span class="toc-text">分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.9.</span> <span class="toc-text">一般工作流程</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">AJAX是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">ajax 异步通信是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E7%9A%84%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">ajax 发送请求的响应状态码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jQuery%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84ajax%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">使用jQuery封装好的ajax，例如：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9F%E7%9A%84ajax%EF%BC%8C%E5%86%99%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%8C%E6%B3%A8%E9%87%8A%E6%A0%87%E6%B3%A8%E7%9A%84%E5%BE%88%E6%98%8E%E7%A1%AE%E4%BA%86"><span class="toc-number">5.</span> <span class="toc-text">使用原生的ajax，写法如下，注释标注的很明确了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax%E5%B0%81%E8%A3%85%E6%80%9D%E8%B7%AF%EF%BC%8C%E5%A6%82%E4%B8%8B"><span class="toc-number">6.</span> <span class="toc-text">ajax封装思路，如下</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">分装详情见  03.html</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-%E5%88%86%E8%A3%85%E8%AF%A6%E6%83%85"><span class="toc-number">1.</span> <span class="toc-text">ajax 分装详情</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -430,13 +604,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2021/04/14/css%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" title="上一篇: css清除浮动">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86(%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98)-%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/" title="下一篇: 事件代理|事件捕获">
+            <a  href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" title="下一篇: 网络协议">
                 <i class="fa fa-angle-right"></i>
             </a>
         

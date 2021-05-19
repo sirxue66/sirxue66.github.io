@@ -7,19 +7,23 @@
   
   
   
-  <title>git使用 | XueSir Blog</title>
+  <title>网络协议 | XueSir Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git的使用git 是什么？git就是： 代码的版本管理工具git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区 配置：1，配置全局用户名： git config –global user.name ‘ ‘2,配置全局邮箱：  git config –global user.email ‘ ‘3,查看配置信息：  git config –">
+  <meta name="description" content="DNS解析（Domain Name Server）【域名服务器】作用域名 与 IP 转换的服务器 特点DNS中保存一种域名与ip对应的表 一个域名只能对应一个ip地址，一个ip地址可以对应多个域名 过程 浏览器，输入域名  --&gt;  本地DNS服务器（其实就是服务商提供的DNS服务器，连网），如果本地DNS服务器没有缓存，就会访问远程DNS服务器寻找ip地址。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用">
-<meta property="og:url" content="http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="网络协议">
+<meta property="og:url" content="http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="XueSir Blog">
-<meta property="og:description" content="git的使用git 是什么？git就是： 代码的版本管理工具git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区 配置：1，配置全局用户名： git config –global user.name ‘ ‘2,配置全局邮箱：  git config –global user.email ‘ ‘3,查看配置信息：  git config –">
+<meta property="og:description" content="DNS解析（Domain Name Server）【域名服务器】作用域名 与 IP 转换的服务器 特点DNS中保存一种域名与ip对应的表 一个域名只能对应一个ip地址，一个ip地址可以对应多个域名 过程 浏览器，输入域名  --&gt;  本地DNS服务器（其实就是服务商提供的DNS服务器，连网），如果本地DNS服务器没有缓存，就会访问远程DNS服务器寻找ip地址。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-13T01:46:37.000Z">
-<meta property="article:modified_time" content="2021-04-13T02:50:51.663Z">
+<meta property="og:image" content="http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/TCP%E8%BF%9E%E6%8E%A5.png">
+<meta property="og:image" content="http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
+<meta property="article:published_time" content="2021-05-18T10:39:24.000Z">
+<meta property="article:modified_time" content="2021-05-18T10:55:27.706Z">
 <meta property="article:author" content="薛成">
+<meta property="article:tag" content="Net">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/TCP%E8%BF%9E%E6%8E%A5.png">
   
     <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
   
@@ -257,11 +261,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-git使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-网络协议" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/13/git%E4%BD%BF%E7%94%A8/" class="article-date">
-      <time datetime="2021-04-13T01:46:37.000Z" itemprop="datePublished">2021-04-13</time>
+      <a  href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2021-05-18T10:39:24.000Z" itemprop="datePublished">2021-05-18</time>
 </a>
 
     </div>
@@ -275,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git使用
+      网络协议
     </h1>
   
 
@@ -290,6 +294,10 @@
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/" rel="tag">Net</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -297,16 +305,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h2><h3 id="git-是什么？"><a href="#git-是什么？" class="headerlink" title="git 是什么？"></a>git 是什么？</h3><p>git就是： 代码的版本管理工具<br>git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区</p>
-<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><p>1，配置全局用户名： git config –global user.name ‘ ‘<br>2,配置全局邮箱：  git config –global user.email ‘ ‘<br>3,查看配置信息：  git config –list</p>
-<h3 id="增加-工作区—-gt-暂存区"><a href="#增加-工作区—-gt-暂存区" class="headerlink" title="增加    工作区—-&gt;暂存区"></a>增加    工作区—-&gt;暂存区</h3><p>1,增加所有更新文件： git add .<br>2,增加指定文件： git add 文件名</p>
-<h3 id="提交-暂存区—–-gt-版本区"><a href="#提交-暂存区—–-gt-版本区" class="headerlink" title="提交      暂存区—–&gt;版本区"></a>提交      暂存区—–&gt;版本区</h3><p>git commit -m “说明”</p>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>1,查看状态（工作区与暂存区之间的状态）： git status<br>2,查看提交记录（暂存区提交到版本区的提交记录）：git log</p>
+        <h2 id="DNS解析（Domain-Name-Server）【域名服务器】"><a href="#DNS解析（Domain-Name-Server）【域名服务器】" class="headerlink" title="DNS解析（Domain Name Server）【域名服务器】"></a>DNS解析（Domain Name Server）【域名服务器】</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><pre><code>域名 与 IP 转换的服务器</code></pre>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><pre><code>DNS中保存一种域名与ip对应的表
+一个域名只能对应一个ip地址，一个ip地址可以对应多个域名</code></pre>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><pre><code> 浏览器，输入域名  --&gt;  本地DNS服务器（其实就是服务商提供的DNS服务器，连网），如果本地DNS服务器没有缓存，就会访问远程DNS服务器寻找ip地址。
+                    --&gt;   从其他远程DNS服务器拿到ip地址后，会将ip地址发给浏览器，并写入缓存。</code></pre>
+<h2 id="IP地址：【互联网协议-地址】"><a href="#IP地址：【互联网协议-地址】" class="headerlink" title="IP地址：【互联网协议 地址】"></a>IP地址：【互联网协议 地址】</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><pre><code>分配给用户上网用的互联网协议</code></pre>
 <a id="more"></a>
-<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>1，比较暂存区与工作区的差别： git diff<br>2，比较暂存区与版本区的差别： git diff –cached<br>3，比较工作区与版本区的差别： git diff master</p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>1，当暂存区与版本区内容不一致，可以重置，也就是让版本区的内容覆盖暂存区，相当于撤销add操作：<br>    撤销指定文件：  git reset HEAD 文件名<br>    撤销最近提交的： git reset HEAD<br>2，暂存区内容覆盖工作区内容，暂存区没有的话，版本区内容覆盖工作区：  git checkout<br>3，删除暂存区文件： git rm 文件名 –cached<br>4，恢复版本区指定版本到工作区：（版本号就是提交log中的提交号，前七位就可以）： git reset –hard 版本号<br>5，查看提交的版本号前七位：  git reflog<br>6，删除版本区： 删除.git文件即可，   之后再 git init </p>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>1，查看分支： git branch     查看所欲分支： git branch -a<br>2，创建分支： git branch 分支名<br>3，删除本地分支：  git branch -d 分支名     删除远程分支：  git push origin :分支名<br>4，切换分支： git checkout 分支名<br>5，创建并切换到创建分支：  git checkout -b 分支名</p>
-<h3 id="一般工作流程"><a href="#一般工作流程" class="headerlink" title="一般工作流程"></a>一般工作流程</h3><p>1，写完代码后add：  git add .<br>2，提交： git commit -m “说明”<br>3，上传到远程仓库：  git push origin 本地分支：远程分支    （远程没有这个分支，会自动创建）<br>4，将远程分支代码拉取到本地：  git pull origin 远程分支名<br>   将远程分支代码拉取下来并合并：   git pull –rabase origin 远程分支</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><pre><code>IPv4  --&gt;  32位，4组 十进制数       192.168.101.129   
+IPv6  --&gt;  12位，8组  十六进制      ABCD.EF01.2345.6789.ABCD.EF01.2345.6789</code></pre>
+<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><pre><code>每一个端口对应于一个服务器下的一个业务或者项目，访问同一个ip地址的不同端口号，其实就是访问同一台服务器中的不同服务。</code></pre>
+<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><pre><code>2 - 65535</code></pre>
+<h3 id="默认端口号"><a href="#默认端口号" class="headerlink" title="默认端口号"></a>默认端口号</h3><pre><code>http协议下（IPv4）： 80
+https协议下（IPv6）： 443</code></pre>
+<h2 id="TCP-Transtraction-Control-Protocol-传输控制协议"><a href="#TCP-Transtraction-Control-Protocol-传输控制协议" class="headerlink" title="TCP(Transtraction Control Protocol)传输控制协议"></a>TCP(Transtraction Control Protocol)传输控制协议</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><pre><code>面向连接（收发数据前，都会建立可靠的连接）</code></pre>
+<h3 id="建立连接的基础"><a href="#建立连接的基础" class="headerlink" title="建立连接的基础"></a>建立连接的基础</h3><pre><code>三次握手</code></pre>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>稳定、重传机制、安全</code></pre>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><pre><code>速度慢、占用资源</code></pre>
+<h3 id="TCP-IP协议组"><a href="#TCP-IP协议组" class="headerlink" title="TCP/IP协议组"></a>TCP/IP协议组</h3><pre><code>提供了点对点的连接机制</code></pre>
+<h2 id="UDP-User-Data-Protocol-用户数据报协议"><a href="#UDP-User-Data-Protocol-用户数据报协议" class="headerlink" title="UDP(User Data Protocol)用户数据报协议"></a>UDP(User Data Protocol)用户数据报协议</h2><h3 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h3><pre><code>面向无连接，不可靠的协议，无状态传输机制</code></pre>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><pre><code>无需确保通讯质量且要求快，比如直播、语音通话</code></pre>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><pre><code>快速、安全</code></pre>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><pre><code>不稳定、不可靠 、丢包</code></pre>
+<h2 id="HTTP-与-HTTPS"><a href="#HTTP-与-HTTPS" class="headerlink" title="HTTP 与 HTTPS"></a>HTTP 与 HTTPS</h2><h3 id="HTTP-超文本传输协议"><a href="#HTTP-超文本传输协议" class="headerlink" title="HTTP(超文本传输协议)"></a>HTTP(超文本传输协议)</h3><pre><code>定义：
+        客户端与服务器间请求与应答的标准，用于从web服务器传输超文本到本地浏览器的传输协议。（传输的明文）
+HTTP请求：
+        按照协议规定先向web服务器发送的将超文本传输到本地浏览器的去请求</code></pre>
+<h3 id="HTTPS-超文本传输安全协议"><a href="#HTTPS-超文本传输安全协议" class="headerlink" title="HTTPS(超文本传输安全协议)"></a>HTTPS(超文本传输安全协议)</h3><pre><code>定义：
+        HTTP的安全版（对传输数据使用SSL和TLS进行了加密，传输的是密文）</code></pre>
+<h2 id="TCP连接-三次握手"><a href="#TCP连接-三次握手" class="headerlink" title="TCP连接  三次握手"></a>TCP连接  三次握手</h2><p>如图：<br>    <img src="TCP%E8%BF%9E%E6%8E%A5.png" alt="连接前缀"><br>    <img src="TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" alt="握手过程"></p>
+<h3 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h3><pre><code>客户端向服务器发送SYN数据包(标志位)，并进入  等待服务器确认状态</code></pre>
+<h3 id="第二次"><a href="#第二次" class="headerlink" title="第二次"></a>第二次</h3><pre><code>服务器收到来自客户端的SYN，服务器确认该数据包，并发送 ACK 和 (SYN+1)回去，服务器进入请求接收并等待客户端确认状态。</code></pre>
+<h3 id="第三次"><a href="#第三次" class="headerlink" title="第三次"></a>第三次</h3><pre><code>客户端进入链接状态后，向服务器发送(ACK+1)和(SYN+1)表示建立连接确认，服务器收到确认后，进入链接状态。</code></pre>
 
       
     </div>
@@ -315,14 +345,14 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2021/04/13/git%E4%BD%BF%E7%94%A8/">git使用</a></p>
+        <p><span>本文标题:</span><a  href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 薛成 的个人博客">薛成</a></p>
         <!-- <a  href="/" title="访问  的个人博客"></a> -->
-        <p><span>发布时间:</span>2021年04月13日 - 09时46分</p>
-        <p><span>最后更新:</span>2021年04月13日 - 10时50分</p>
+        <p><span>发布时间:</span>2021年05月18日 - 18时39分</p>
+        <p><span>最后更新:</span>2021年05月18日 - 18时55分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/04/13/git%E4%BD%BF%E7%94%A8/" title="git使用">http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/04/13/git%E4%BD%BF%E7%94%A8/　　作者: " title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" title="网络协议">http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/　　作者: " title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -334,18 +364,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2021/04/14/css%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          css清除浮动
+          AJAX封装
         
       </div>
     </a>
   
   
-    <a  href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86(%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98)-%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">事件代理|事件捕获</div>
+    <a  href="/2021/05/10/uni-App/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">uni-App</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -357,7 +387,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">git 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">配置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E2%80%94-gt-%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">增加    工作区—-&gt;暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4-%E6%9A%82%E5%AD%98%E5%8C%BA%E2%80%94%E2%80%93-gt-%E7%89%88%E6%9C%AC%E5%8C%BA"><span class="toc-number">1.4.</span> <span class="toc-text">提交      暂存区—–&gt;版本区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B"><span class="toc-number">1.5.</span> <span class="toc-text">查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83"><span class="toc-number">1.6.</span> <span class="toc-text">比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF"><span class="toc-number">1.8.</span> <span class="toc-text">分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.9.</span> <span class="toc-text">一般工作流程</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS%E8%A7%A3%E6%9E%90%EF%BC%88Domain-Name-Server%EF%BC%89%E3%80%90%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%91"><span class="toc-number">1.</span> <span class="toc-text">DNS解析（Domain Name Server）【域名服务器】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%EF%BC%9A%E3%80%90%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE-%E5%9C%B0%E5%9D%80%E3%80%91"><span class="toc-number">2.</span> <span class="toc-text">IP地址：【互联网协议 地址】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-1"><span class="toc-number">2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">端口号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-2"><span class="toc-number">3.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4"><span class="toc-number">3.2.</span> <span class="toc-text">范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-number">3.3.</span> <span class="toc-text">默认端口号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-Transtraction-Control-Protocol-%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.</span> <span class="toc-text">TCP(Transtraction Control Protocol)传输控制协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-1"><span class="toc-number">4.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="toc-number">4.2.</span> <span class="toc-text">建立连接的基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">4.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">4.4.</span> <span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E7%BB%84"><span class="toc-number">4.5.</span> <span class="toc-text">TCP&#x2F;IP协议组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UDP-User-Data-Protocol-%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%8D%8F%E8%AE%AE"><span class="toc-number">5.</span> <span class="toc-text">UDP(User Data Protocol)用户数据报协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-2"><span class="toc-number">5.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">5.2.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9-1"><span class="toc-number">5.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="toc-number">5.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-%E4%B8%8E-HTTPS"><span class="toc-number">6.</span> <span class="toc-text">HTTP 与 HTTPS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="toc-number">6.1.</span> <span class="toc-text">HTTP(超文本传输协议)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS-%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">6.2.</span> <span class="toc-text">HTTPS(超文本传输安全协议)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E8%BF%9E%E6%8E%A5-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-number">7.</span> <span class="toc-text">TCP连接  三次握手</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1"><span class="toc-number">7.1.</span> <span class="toc-text">第一次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1"><span class="toc-number">7.2.</span> <span class="toc-text">第二次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1"><span class="toc-number">7.3.</span> <span class="toc-text">第三次</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -430,13 +460,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2021/04/14/css%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" title="上一篇: css清除浮动">
+            <a  href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/" title="上一篇: AJAX封装">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86(%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98)-%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/" title="下一篇: 事件代理|事件捕获">
+            <a  href="/2021/05/10/uni-App/" title="下一篇: uni-App">
                 <i class="fa fa-angle-right"></i>
             </a>
         
