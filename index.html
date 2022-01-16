@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>XueSir Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="XueSir Blog">
+<meta property="og:url" content="https://sirxue66.github.io/index.html">
+<meta property="og:site_name" content="XueSir Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="薛成">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/cow.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic" style="-webkit-box-pack: inherit;">
+            
+            <img src="/img/myavatar.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">薛副官</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/tools">开发工具</a></li>
+                        
+                            <li><a  href="/categories/video">大片剪辑</a></li>
+                        
+                            <li><a  href="/categories/web">前端工厂</a></li>
+                        
+                            <li><a  target="_blank" rel="noopener" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1">关于我</a></li>
+                        
+                            <li><a  href="/categories/share">happy share</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/sirxue66" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a>
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">薛副官</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/myavatar.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">薛副官</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/tools">开发工具</a></li>
+                
+                    <li><a href="/categories/video">大片剪辑</a></li>
+                
+                    <li><a href="/categories/web">前端工厂</a></li>
+                
+                    <li><a target="_blank" rel="noopener" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1">关于我</a></li>
+                
+                    <li><a href="/categories/share">happy share</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/sirxue66" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-webpack-01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/01/11/webpack-01/" class="article-date">
+      <time datetime="2022-01-11T13:58:02.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/01/11/webpack-01/">webpack-01</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="webpack-—-一"><a href="#webpack-—-一" class="headerlink" title="webpack  — (一)"></a><strong>webpack</strong>  — (一)</h1><p>commonJS规范：       module     ———-&gt;   require</p>
+<p>es6modules规范:       export           ————-&gt;   import</p>
+<p>webpack    是基于node 环境运行的  所以使用的是 commonJS规范  ( module.exports = { } )</p>
+<p>注（运行非全局安装的程序 ，可以使用 npx 在当前安装目录下 执行程序命令）</p>
+<p>webpack本身只能加载 js 和 html ，若要加载css 等需要使用 loader 进行转化</p>
+<h2 id="webpack配置项："><a href="#webpack配置项：" class="headerlink" title="webpack配置项："></a>webpack配置项：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">&#x27;./src/index.js&#x27;</span>,                                                   <span class="comment">//入口</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;bundle.js&#x27;</span>,        <span class="comment">//打包文件名</span></span><br><span class="line">        path: path.resolve(_dirname, <span class="string">&#x27;./dist&#x27;</span>),         <span class="comment">//打包文件位置</span></span><br><span class="line">        clean: <span class="literal">true</span>,         <span class="comment">//是否打包自动清除之前的打包文件</span></span><br><span class="line">        assetModuleFilename: <span class="string">&#x27;images/[contenthash][ext]&#x27;</span>,<span class="comment">//静态资源打包文件位置,文件名为生成的hash值加后缀</span></span><br><span class="line">    &#125;,                                                          <span class="comment">//出口</span></span><br><span class="line">    </span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,                                                  <span class="comment">//当前开发模式</span></span><br><span class="line">    </span><br><span class="line">    plugins:[],                   <span class="comment">//插件</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">module</span>: &#123;                       <span class="comment">//模块</span></span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.png$/</span>,                    <span class="comment">//处理.png图片</span></span><br><span class="line">                type: <span class="string">&#x27;asset/resource&#x27;</span>,           <span class="comment">//资源类型，以url方式引入</span></span><br><span class="line">                generator: &#123;            <span class="comment">//打包后的文件位置，优先级高于output中的位置</span></span><br><span class="line">                    filename: <span class="string">&#x27;images/[contexthash][ext]&#x27;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.svg$/</span>,             <span class="comment">//处理svg</span></span><br><span class="line">                type: <span class="string">&#x27;asset/inline&#x27;</span>         <span class="comment">//资源类型，以date也就是base64方式引入svg</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.txt$/</span>,         <span class="comment">//处理txt</span></span><br><span class="line">                type: <span class="string">&#x27;asset/source&#x27;</span>     <span class="comment">//引入类型，以 源码方式引入</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.jpg$/</span>,         <span class="comment">//处理 jpg</span></span><br><span class="line">                type: <span class="string">&#x27;asset&#x27;</span>     <span class="comment">//引入类型，自动选择类型（resource  inline），文件小的使用inline，文件大                                      的使用resource</span></span><br><span class="line">                parser: &#123;</span><br><span class="line">                	dataUrlCondition: &#123;</span><br><span class="line">                		maxSize: <span class="number">4</span>*<span class="number">1024</span>*<span class="number">1024</span>     <span class="comment">//设置使用resource还是inline的阈值，大于4M只用resource                                                   方式引入，小与4M 以inline方式引入</span></span><br><span class="line">            		&#125;</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.(woff | woff2 | eot | ttf | otf)$/</span>,        <span class="comment">//处理字体库</span></span><br><span class="line">    			type: <span class="string">&#x27;resource&#x27;</span></span><br><span class="line">			&#125;,</span><br><span class="line">    		<span class="comment">/** 使用loader*/</span></span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">    			use: [<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader&#x27;</span>]     <span class="comment">//调用顺序从后向前</span></span><br><span class="line">			&#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			 test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                  use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader&#x27;</span>,<span class="string">&#x27;less-loader&#x27;</span>]</span><br><span class="line">			&#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.js$/</span>,        <span class="comment">//使用bable转换ES6语法</span></span><br><span class="line">    			exclude: <span class="regexp">/node-modules/</span>,           <span class="comment">//排除node-modules中的js</span></span><br><span class="line">    			use: &#123;</span><br><span class="line">                    loader: <span class="string">&#x27;bable-loader&#x27;</span>,       </span><br><span class="line">                    options: &#123;</span><br><span class="line">                        presets: [<span class="string">&#x27;@bable/preset-env&#x27;</span>]     <span class="comment">//预设置，一组bable的集合 </span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">			&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    devServer: &#123;           <span class="comment">//实时加载页面更新  安装 webpack-dev-servre插件</span></span><br><span class="line">        <span class="keyword">static</span>: <span class="string">&#x27;./dist&#x27;</span></span><br><span class="line">    &#125;,          </span><br><span class="line">    </span><br><span class="line">    devtool: <span class="string">&#x27;inline-source-map&#x27;</span>,           <span class="comment">//定位压缩代码报错位置</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="html-webpack-plugin-插件："><a href="#html-webpack-plugin-插件：" class="headerlink" title="html-webpack-plugin 插件："></a>html-webpack-plugin 插件：</h3><p>​    自定加载生成 index.html文件到打包目录下</p>
+<p>​    实例化：  new html-webpack-plugin();</p>
+<p>​    简单配置： </p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2022/01/11/webpack-01/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Vue3-一" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/01/11/Vue3-%E4%B8%80/" class="article-date">
+      <time datetime="2022-01-11T13:54:34.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/01/11/Vue3-%E4%B8%80/">Vue3(一)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="VUE-3-0-新特性"><a href="#VUE-3-0-新特性" class="headerlink" title="VUE 3.0 新特性"></a><strong>VUE 3.0 新特性</strong></h1><h2 id="引入Tree-shaking"><a href="#引入Tree-shaking" class="headerlink" title="引入Tree-shaking"></a>引入Tree-shaking</h2><p>​     Vue3最重要的变化之一就是引入了Tree-Shaking，Tree-Shaking带来的bundle体积更小是显而易见的 。在2.x版本中，很多函数都挂载在全局Vue对象上，比如nextTick、nextTick、nextTick、set等函数，因此虽然我们可能用不到，但打包时只要引入了vue这些全局函数仍然会打包进bundle中。而在Vue3中，所有的API都通过ES6模块化的方式引入，这样就能让webpack或rollup等打包工具在打包时对没有用到API进行剔除，最小化bundle体积。</p>
+<p> vuex和vue-router也都使用了Tree-Shaking进行了改进 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//src/store/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">  mutations: &#123;&#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//src/router/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">  history: createWebHistory(process.env.BASE_URL),</span><br><span class="line">  routes,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p> 在vue3中，新增了一个<code>setup</code>生命周期函数，setup执行的时机是在<code>beforeCreate</code>生命函数之前执行，因此在这个函数中是不能通过<code>this</code>来获取实例的 。</p>
+<p>​    setup<br>​    beforeCreate   （推荐使用 setup 代替）<br>​    created             （推荐使用 setup 代替）<br>​    beforeMount<br>​    mounted<br>​    beforeUpdate<br>​    update<br>​    beforeUnmount<br>​    unmounted</p>
+<p> vue3新增了生命周期钩子，我们可以通过在生命周期函数前加<code>on</code>来访问组件的生命周期。 我们在setup中挂载生命周期钩子，当执行到对应的生命周期时，就调用对应的钩子函数： </p>
+<p>​    onBeforeMount<br>​    onMounted<br>​    onBeforeUpdate<br>​    onUpdate<br>​    onBeforeUnmount<br>​    onUnmounted</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2022/01/11/Vue3-%E4%B8%80/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-下载文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" class="article-date">
+      <time datetime="2021-12-14T12:23:57.000Z" itemprop="datePublished">2021-12-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">下载文件</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="文件下载的五种方式："><a href="#文件下载的五种方式：" class="headerlink" title="文件下载的五种方式："></a><strong>文件下载的五种方式：</strong></h1><h1 id="form表单提交"><a href="#form表单提交" class="headerlink" title="form表单提交"></a>form表单提交</h1><p>这是以前常使用的传统方式，毕竟那个年代，没那么多好用的新特性呀。</p>
+<p>道理也很简单，为一个下载按钮添加 <code>click</code>事件，点击时动态生成一个表单，利用表单提交的功能来实现文件的下载（实际上表单的提交就是发送一个请求）</p>
+<p>来看下如何生成一个表单，生成怎么样的一个表单：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * 下载文件</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;String&#125;</span> <span class="variable">path</span></span> - 请求的地址</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;String&#125;</span> <span class="variable">fileName</span></span> - 文件名</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">downloadFile</span> (<span class="params">downloadUrl, fileName</span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 创建表单</span></span><br><span class="line"> </span><br><span class="line"> <span class="keyword">const</span> formObj = <span class="built_in">document</span>.createElement(<span class="string">&#x27;form&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">    formObj.action = downloadUrl;</span><br><span class="line"> </span><br><span class="line">    formObj.method = <span class="string">&#x27;get&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">    formObj.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 创建input，主要是起传参作用</span></span><br><span class="line"> </span><br><span class="line"> <span class="keyword">const</span> formItem = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">    formItem.value = fileName; <span class="comment">// 传参的值</span></span><br><span class="line"> </span><br><span class="line">    formItem.name = <span class="string">&#x27;fileName&#x27;</span>; <span class="comment">// 传参的字段名</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 插入到网页中</span></span><br><span class="line"> </span><br><span class="line">    formObj.appendChild(formItem);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(formObj);</span><br><span class="line"> </span><br><span class="line">    formObj.submit(); <span class="comment">// 发送请求</span></span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(formObj); <span class="comment">// 发送完清除掉</span></span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>传统方式，兼容性好，不会出现URL长度限制问题</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>无法知道下载的进度</li>
+<li>无法直接下载浏览器可直接预览的文件类型（如txt/png等）</li>
+</ul>
+<h1 id="open或location-href"><a href="#open或location-href" class="headerlink" title="open或location.href"></a>open或location.href</h1><p>最简单最直接的方式，实际上跟 <code>a</code>标签访问下载链接一样</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-addHandler添加事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/16/addHandler%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6/" class="article-date">
+      <time datetime="2021-11-16T14:17:45.000Z" itemprop="datePublished">2021-11-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/16/addHandler%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6/">addHandler添加事件</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="EventUtil-addHandler方法："><a href="#EventUtil-addHandler方法：" class="headerlink" title="EventUtil.addHandler方法："></a><strong>EventUtil.addHandler方法：</strong></h2><ul>
+<li><h3 id="addHandler-方法，职责是分别视情况而定来使用DOM0级方法、DOM2级方法或IE方法来添加事件。"><a href="#addHandler-方法，职责是分别视情况而定来使用DOM0级方法、DOM2级方法或IE方法来添加事件。" class="headerlink" title="addHandler 方法，职责是分别视情况而定来使用DOM0级方法、DOM2级方法或IE方法来添加事件。"></a>addHandler 方法，职责是<strong>分别视情况而定来使用DOM0级方法、DOM2级方法或IE方法来添加事件</strong>。</h3></li>
+</ul>
+<p>​    这个方法属于一个名字叫EventUtil的对象，可以使用这个对象来<strong>处理浏览器间的差异。</strong>　　　　        </p>
+<p>​    addHandler() 方法接受3个参数：<strong>要操作的元素、事件名称和事件处理程序函数。</strong></p>
+<p>​    与addHandler()方法对应的方法是removeHandler()，它也接受相同参数。这个方法的指责是移除之前添加的事件处理            程序——-无论该事件处理程序是采取什么方式添加到元素中的。如果其他方法无效，默认采用DOM0级方法。```</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/16/addHandler%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-事件类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2021-11-16T14:13:46.000Z" itemprop="datePublished">2021-11-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/">事件类型</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="web-—-事件类型"><a href="#web-—-事件类型" class="headerlink" title="web  —-  事件类型"></a>web  —-  事件类型</h1><h2 id="第一部分：UI事件"><a href="#第一部分：UI事件" class="headerlink" title="第一部分：UI事件"></a>第一部分：UI事件</h2><h3 id="UI事件中主要包括-load-unload-abort-error-select-resize-scroll事件。"><a href="#UI事件中主要包括-load-unload-abort-error-select-resize-scroll事件。" class="headerlink" title="UI事件中主要包括     load,    unload,    abort,    error,    select,    resize,    scroll事件。"></a><strong>UI事件中主要包括     load,    unload,    abort,    error,    select,    resize,    scroll事件。</strong></h3><p><strong>1.load事件</strong></p>
+<p>　　　<strong>此事件为当页面完全加载完之后（包括所有的图像、js文件、css文件等外部资源），就会触发window上面的load事件。</strong></p>
+<p>​         这个事件还可以用在其他元素上，比如图像元素 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;smile.png&quot;</span> onload=<span class="string">&quot;alert(&#x27;loaded&#x27;)&quot;</span>&gt;　</span><br></pre></td></tr></table></figure>
+<p>​         当然也可以使用JS来实现 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img=<span class="built_in">document</span>.getElementById(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">EventUtil.addHandler(img,<span class="string">&quot;load&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      event=EventUtil.getEvent(event);</span><br><span class="line">      alert(EventUtil.getTarget(event).src);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue懒加载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/" class="article-date">
+      <time datetime="2021-11-16T14:08:41.000Z" itemprop="datePublished">2021-11-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/">vue懒加载</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="vue项目实现路由按需加载-路由懒加载-的3种方式"><a href="#vue项目实现路由按需加载-路由懒加载-的3种方式" class="headerlink" title="vue项目实现路由按需加载(路由懒加载)的3种方式"></a>vue项目实现路由按需加载(路由懒加载)的3种方式</h2><ol>
+<li><h3 id="vue异步组件"><a href="#vue异步组件" class="headerlink" title="vue异步组件"></a>vue异步组件</h3></li>
+<li><h3 id="es提案的import"><a href="#es提案的import" class="headerlink" title="es提案的import()"></a>es提案的import()</h3></li>
+<li><h3 id="webpack的require-ensure"><a href="#webpack的require-ensure" class="headerlink" title="webpack的require,ensure()"></a>webpack的require,ensure()</h3></li>
+</ol>
+<h3 id="1-vue异步组件技术-异步加载"><a href="#1-vue异步组件技术-异步加载" class="headerlink" title="1 . vue异步组件技术 ==== 异步加载"></a>1 . vue异步组件技术 ==== 异步加载</h3><p>vue-router配置路由 , 使用vue的异步组件技术 , 可以实现按需加载 .<br>但是,这种情况下一个组件生成一个js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* vue异步组件技术 */</span></span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/home&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/home&#x27;</span>],resolve) &#125;,</span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/index&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Index&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/index&#x27;</span>],resolve) &#125;,</span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/about&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;about&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/about&#x27;</span>],resolve) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-组件懒加载方案二-路由懒加载-使用import"><a href="#2-组件懒加载方案二-路由懒加载-使用import" class="headerlink" title="2.组件懒加载方案二 路由懒加载(使用import)"></a>2.组件懒加载方案二 路由懒加载(使用import)</h3>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2021-11-03T14:11:12.000Z" itemprop="datePublished">2021-11-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/">vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题"><a href="#vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题" class="headerlink" title="vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题"></a>vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题</h2><h3 id="办法一："><a href="#办法一：" class="headerlink" title="办法一："></a>办法一：</h3><p>​         使用v-if可以解决报错问题，和created为空问题 </p>
+<h3 id="parent-vue"><a href="#parent-vue" class="headerlink" title="parent.vue"></a>parent.vue</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">  父组件</span><br><span class="line">  &lt;child :child-object=<span class="string">&quot;asyncObject&quot;</span> v-<span class="keyword">if</span>=<span class="string">&quot;flag&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line"> <span class="keyword">import</span> child <span class="keyword">from</span> <span class="string">&#x27;./child&#x27;</span></span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">   asyncObject: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">   flag: <span class="literal">false</span></span><br><span class="line">  &#125;),</span><br><span class="line">  components: &#123;</span><br><span class="line">   child</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">   <span class="comment">// setTimeout模拟异步数据</span></span><br><span class="line">   <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.asyncObject = &#123;<span class="string">&#x27;items&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;</span><br><span class="line">    <span class="built_in">this</span>.flag = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;parent finish&#x27;</span>)</span><br><span class="line">   &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="child-vue"><a href="#child-vue" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">  子组件</span><br><span class="line">  &lt;!--不报错--&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;childObject.items[<span class="number">0</span>]&#125;&#125;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: [<span class="string">&#x27;childObject&#x27;</span>],</span><br><span class="line">  data: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">  &#125;),</span><br><span class="line">  created () &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">this</span>.childObject)<span class="comment">// Object &#123;items: [1,2,3]&#125;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="办法二："><a href="#办法二：" class="headerlink" title="办法二："></a>办法二：</h3><p>​          子组件使用watch来监听父组件改变的prop，使用methods来代替created </p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-React-Component和PureComponent的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/10/24/React-Component%E5%92%8CPureComponent%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+      <time datetime="2021-10-24T13:38:00.000Z" itemprop="datePublished">2021-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/10/24/React-Component%E5%92%8CPureComponent%E7%9A%84%E4%BD%BF%E7%94%A8/">React Component和PureComponent的使用</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Component存在的问题"><a href="#Component存在的问题" class="headerlink" title="Component存在的问题?"></a>Component存在的问题?</h3><pre><code>1). 父组件重新render(), 当前组件也会重新执行render(), 即使没有任何变化
+2). 当前组件setState(), 重新执行render(), 即使state没有任何变化</code></pre>
+<h3 id="解决Component存在的问题"><a href="#解决Component存在的问题" class="headerlink" title="解决Component存在的问题"></a>解决Component存在的问题</h3><pre><code>1). 原因: 组件的componentShouldUpdate()默认返回true, 即使数据没有变化render()都会重新执行
+2). 办法1: 重写shouldComponentUpdate(nextProp,nextState), 判断如果数据有变化返回true, 否则返回false
+3). 办法2: 使用PureComponent代替Component
+4). 说明: 一般都使用PureComponent来优化组件性能</code></pre>
+<h3 id="PureComponent的基本原理"><a href="#PureComponent的基本原理" class="headerlink" title="PureComponent的基本原理"></a>PureComponent的基本原理</h3><pre><code>1). 重写实现shouldComponentUpdate()
+2). 对组件的新/旧state和props中的数据进行 浅比较 , 如果都没有变化, 返回false, 否则返回true</code></pre>
+<p><strong>注意是浅比较</strong><br>    3). 一旦componentShouldUpdate()返回false不再执行用于更新的render()</p>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate (nextProps, nextState) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;shouldComponentUpdate()&#x27;</span>)</span><br><span class="line">      <span class="comment">// 比较新旧props中的和state数据, 如果没有一个变化的返回false, 否则true, m1 m2分别是响应数据</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">this</span>.props.m1===nextProps.m1 &amp;&amp; <span class="built_in">this</span>.state.m2===nextState.m2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-React-setState的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/10/24/React-setState%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+      <time datetime="2021-10-24T13:23:00.000Z" itemprop="datePublished">2021-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/10/24/React-setState%E7%9A%84%E4%BD%BF%E7%94%A8/">React setState的使用</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="setState-是异步还是同步的？"><a href="#setState-是异步还是同步的？" class="headerlink" title="setState()是异步还是同步的？"></a>setState()是异步还是同步的？</h3><pre><code>1). 执行setState()的位置?
+    在react控制的回调函数中: 例如： 生命周期勾子 / react事件监听回调
+    非react控制的异步回调函数中: 例如：定时器回调 / 原生事件监听回调 / promise回调 /...
+2). 异步 OR 同步?
+    react相关回调中: 异步
+    其它异步回调中: 同步</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> react事件监听回调中, setState()是异步更新状态</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">update1 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;update1 setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;update1 setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> react生命周期勾子中, setState()是异步更新状态</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">componentDidMount () &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;componentDidMount setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;componentDidMount setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">定时器回调 / 原生事件监听回调 / promise回调 /...</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">update2 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">    <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">update3 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> h2 = <span class="built_in">this</span>.refs.count</span><br><span class="line">  h2.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">    <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">update4 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Promise setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">    <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Promise setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="关于异步执行的setState"><a href="#关于异步执行的setState" class="headerlink" title="关于异步执行的setState()"></a>关于异步执行的setState()</h3><pre><code>  1). 多次调用, 如何处理?
+      setState(&#123;&#125;): 合并更新一次状态, 只调用一次render()更新界面 ---状态更新和界面更新都合并了
+      setState(fn): 更新多次状态, 但只调用一次render()更新界面  ---状态更新没有合并, 但界面更新合并了
+  2). 如何得到异步更新后的状态数据?
+      在setState()的callback回调函数中</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">update5 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">update6 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123;<span class="attr">count</span>: <span class="built_in">this</span>.state.count + <span class="number">1</span>&#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123;<span class="attr">count</span>: <span class="built_in">this</span>.state.count + <span class="number">1</span>&#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">update7 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123;<span class="attr">count</span>: <span class="built_in">this</span>.state.count + <span class="number">1</span>&#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之前2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">  <span class="built_in">this</span>.setState(<span class="function"><span class="params">state</span> =&gt;</span> (&#123;<span class="attr">count</span>: state.count + <span class="number">1</span>&#125;))</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;onclick setState()之后2&#x27;</span>, <span class="built_in">this</span>.state.count)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-变量作用域与解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="article-date">
+      <time datetime="2021-06-16T06:47:06.000Z" itemprop="datePublished">2021-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/">变量作用域与解构赋值</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="在javascript中，用var声明的变量实际上是有作用域的"><a href="#在javascript中，用var声明的变量实际上是有作用域的" class="headerlink" title="在javascript中，用var声明的变量实际上是有作用域的"></a>在javascript中，用var声明的变量实际上是有作用域的</h2><pre><code>如果一个变量在函数体内部申明，则该变量的作用域为整个函数体，在函数体外不可引用该变量：</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">    x = x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">x = x + <span class="number">2</span>; <span class="comment">// ReferenceError! 无法在函数体外引用变量x</span></span><br></pre></td></tr></table></figure>
+<pre><code>如果两个不同的函数各自申明了同一个变量，那么该变量只在各自的函数体内起作用。换句话说，不同函数内部的同名变量互相独立，互不影响。</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2022 薛成
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 9;
+            alert(backgroundnum);
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

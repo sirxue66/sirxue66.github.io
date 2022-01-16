@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Vue3(一) | XueSir Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="VUE 3.0 新特性引入Tree-shaking​     Vue3最重要的变化之一就是引入了Tree-Shaking，Tree-Shaking带来的bundle体积更小是显而易见的 。在2.x版本中，很多函数都挂载在全局Vue对象上，比如nextTick、nextTick、nextTick、set等函数，因此虽然我们可能用不到，但打包时只要引入了vue这些全局函数仍然会打包进bundle中。而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3(一)">
+<meta property="og:url" content="https://sirxue66.github.io/2022/01/11/Vue3-%E4%B8%80/index.html">
+<meta property="og:site_name" content="XueSir Blog">
+<meta property="og:description" content="VUE 3.0 新特性引入Tree-shaking​     Vue3最重要的变化之一就是引入了Tree-Shaking，Tree-Shaking带来的bundle体积更小是显而易见的 。在2.x版本中，很多函数都挂载在全局Vue对象上，比如nextTick、nextTick、nextTick、set等函数，因此虽然我们可能用不到，但打包时只要引入了vue这些全局函数仍然会打包进bundle中。而">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-11T13:54:34.000Z">
+<meta property="article:modified_time" content="2022-01-11T13:59:47.330Z">
+<meta property="article:author" content="薛成">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/cow.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic" style="-webkit-box-pack: inherit;">
+            
+            <img src="/img/myavatar.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">薛副官</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/tools">开发工具</a></li>
+                        
+                            <li><a  href="/categories/video">大片剪辑</a></li>
+                        
+                            <li><a  href="/categories/web">前端工厂</a></li>
+                        
+                            <li><a  target="_blank" rel="noopener" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1">关于我</a></li>
+                        
+                            <li><a  href="/categories/share">happy share</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/sirxue66" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a>
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">薛副官</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/myavatar.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">薛副官</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/tools">开发工具</a></li>
+                
+                    <li><a href="/categories/video">大片剪辑</a></li>
+                
+                    <li><a href="/categories/web">前端工厂</a></li>
+                
+                    <li><a target="_blank" rel="noopener" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1">关于我</a></li>
+                
+                    <li><a href="/categories/share">happy share</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/sirxue66" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://www.weibo.com/5852703221/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Vue3-一" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/01/11/Vue3-%E4%B8%80/" class="article-date">
+      <time datetime="2022-01-11T13:54:34.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue3(一)
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="VUE-3-0-新特性"><a href="#VUE-3-0-新特性" class="headerlink" title="VUE 3.0 新特性"></a><strong>VUE 3.0 新特性</strong></h1><h2 id="引入Tree-shaking"><a href="#引入Tree-shaking" class="headerlink" title="引入Tree-shaking"></a>引入Tree-shaking</h2><p>​     Vue3最重要的变化之一就是引入了Tree-Shaking，Tree-Shaking带来的bundle体积更小是显而易见的 。在2.x版本中，很多函数都挂载在全局Vue对象上，比如nextTick、nextTick、nextTick、set等函数，因此虽然我们可能用不到，但打包时只要引入了vue这些全局函数仍然会打包进bundle中。而在Vue3中，所有的API都通过ES6模块化的方式引入，这样就能让webpack或rollup等打包工具在打包时对没有用到API进行剔除，最小化bundle体积。</p>
+<p> vuex和vue-router也都使用了Tree-Shaking进行了改进 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//src/store/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">  mutations: &#123;&#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//src/router/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">  history: createWebHistory(process.env.BASE_URL),</span><br><span class="line">  routes,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p> 在vue3中，新增了一个<code>setup</code>生命周期函数，setup执行的时机是在<code>beforeCreate</code>生命函数之前执行，因此在这个函数中是不能通过<code>this</code>来获取实例的 。</p>
+<p>​    setup<br>​    beforeCreate   （推荐使用 setup 代替）<br>​    created             （推荐使用 setup 代替）<br>​    beforeMount<br>​    mounted<br>​    beforeUpdate<br>​    update<br>​    beforeUnmount<br>​    unmounted</p>
+<p> vue3新增了生命周期钩子，我们可以通过在生命周期函数前加<code>on</code>来访问组件的生命周期。 我们在setup中挂载生命周期钩子，当执行到对应的生命周期时，就调用对应的钩子函数： </p>
+<p>​    onBeforeMount<br>​    onMounted<br>​    onBeforeUpdate<br>​    onUpdate<br>​    onBeforeUnmount<br>​    onUnmounted</p>
+<a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onBeforeMount, onMounted &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;----setup----&quot;</span>);</span><br><span class="line">    onBeforeMount(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// beforeMount代码执行</span></span><br><span class="line">    &#125;);</span><br><span class="line">    onMounted(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// mounted代码执行</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="响应式API"><a href="#响应式API" class="headerlink" title="响应式API"></a>响应式API</h2><p> 可以使用<code>reactive</code>来为JS对象创建响应式状态 。 　对于一些基本数据类型，比如字符串和数值等，我们想要让它变成响应式，我们当然也可以通过reactive函数创建对象的方式，但是Vue3提供了另一个函数<code>ref</code>。 ref返回的响应式对象是只包含一个名为value参数的RefImpl对象，在js中获取和修改都是通过它的value属性；但是在模板中被渲染时，自动展开内部的值，因此不需要在模板中追加<code>.value</code>。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive, toRefs, ref &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> user = reactive(&#123;</span><br><span class="line">  name: <span class="string">&#x27;Vue2&#x27;</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">&#125;);</span><br><span class="line">user.name = <span class="string">&#x27;Vue3&#x27;</span></span><br><span class="line"><span class="keyword">const</span> num = ref(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> str = ref(<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> male = ref(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">num.value++;</span><br><span class="line"><span class="built_in">console</span>.log(num.value);</span><br><span class="line"></span><br><span class="line">str.value = <span class="string">&quot;new val&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.value);</span><br></pre></td></tr></table></figure>
+<p> 当我们处理一些大型响应式对象的property时，我们很希望使用ES6的解构来获取我们想要的值 。 我们可以将响应式对象转换为一组ref，这些ref将保留与源对象的响应式关联 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> book = reactive(&#123;</span><br><span class="line">  name: <span class="string">&#x27;Learn Vue&#x27;</span>,</span><br><span class="line">  year: <span class="number">2020</span>,</span><br><span class="line">  title: <span class="string">&#x27;Chapter one&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">  name,</span><br><span class="line">&#125; = toRefs(book)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意这里解构出来的name是ref对象</span></span><br><span class="line"><span class="comment">// 需要通过value来取值赋值</span></span><br><span class="line">name.value = <span class="string">&#x27;new Learn&#x27;</span></span><br><span class="line"><span class="comment">// new Learn</span></span><br><span class="line"><span class="built_in">console</span>.log(book.name);</span><br></pre></td></tr></table></figure>
+<p> 有时我们需要的值依赖于其他值的状态，在vue2.x中我们使用<code>computed函数</code>来进行计算属性，在vue3中将computed功能进行了抽离，它接受一个getter函数，并为getter返回的值创建了一个<strong>不可变</strong>的响应式ref对象 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = ref(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> double = computed(<span class="function">() =&gt;</span> num.value * <span class="number">2</span>);</span><br><span class="line">num.value++;</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(double.value);</span><br><span class="line"><span class="comment">// Warning: computed value is readonly</span></span><br><span class="line">double.value = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>我们也可以使用get和set函数创建一个可读写的ref对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = ref(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> double = computed(&#123;</span><br><span class="line">  get: <span class="function">() =&gt;</span> num.value * <span class="number">2</span>,</span><br><span class="line">  set: <span class="function">(<span class="params">val</span>) =&gt;</span> (num.value = val / <span class="number">2</span>),</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">num.value++;</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(double.value);</span><br><span class="line"></span><br><span class="line">double.value = <span class="number">8</span></span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(num.value);</span><br></pre></td></tr></table></figure>
+<h2 id="响应式监听"><a href="#响应式监听" class="headerlink" title="响应式监听"></a>响应式监听</h2><p> vue3也提供了两个函数来侦听数据源的变化：watch和watchEffect。 </p>
+<p>​    使用watch函数：（监听单个数据）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive, ref, watch &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">  count: <span class="number">0</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//侦听时返回值得getter函数</span></span><br><span class="line">watch(</span><br><span class="line">  () =&gt; state.count,</span><br><span class="line">  (count, prevCount) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 1 0</span></span><br><span class="line">    <span class="built_in">console</span>.log(count, prevCount);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line">state.count++;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = ref(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//直接侦听ref</span></span><br><span class="line">watch(count, <span class="function">(<span class="params">count, prevCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 2 0</span></span><br><span class="line">  <span class="built_in">console</span>.log(count, prevCount, <span class="string">&quot;watch&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">count.value = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>​    使用watch函数：（监听多个数据）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">  count: <span class="number">1</span>,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> count = ref(<span class="number">2</span>);</span><br><span class="line">watch([<span class="function">() =&gt;</span> state.count, count], <span class="function">(<span class="params">newVal, oldVal</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//[3, 2]  [1, 2]</span></span><br><span class="line">  <span class="comment">//[3, 4]  [3, 2]</span></span><br><span class="line">  <span class="built_in">console</span>.log(newVal, oldVal);</span><br><span class="line">&#125;);</span><br><span class="line">state.count = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">count.value = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>watchEffect不需要手动传入依赖</p>
+</li>
+<li><p>每次初始化时watchEffect都会执行一次回调函数来自动获取依赖</p>
+</li>
+<li><p>watchEffect无法获取到原值，只能得到变化后的值</p>
+</li>
+<li><pre><code class="js">import &#123; reactive, ref, watch, watchEffect &#125; from &quot;vue&quot;;
+
+const count = ref(0);
+const state = reactive(&#123;
+  year: 2021,
+&#125;);
+
+watchEffect(() =&gt; &#123;
+  console.log(count.value);
+  console.log(state.year);
+&#125;);
+setInterval(() =&gt; &#123;
+  count.value++;
+  state.year++;
+&#125;, 1000);
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   ## 组合API</span><br><span class="line"></span><br><span class="line">&#96;Options API&#96;就是将同一类型的东西放在同一个选项中，当我们的数据比较少的时候，这样的组织方式是比较清晰的；但是随着数据增多，我们维护的功能点会涉及到多个data和methods，但是我们无法感知哪些data和methods是需要涉及到的，经常需要来回切换查找，甚至是需要理解其他功能的逻辑，这也导致了组件难以理解和阅读。</span><br><span class="line"></span><br><span class="line">　　而&#96;Composition API&#96;做的就是把同一功能的代码放到一起维护，这样我们需要维护一个功能点的时候，不用去关心其他的逻辑，只关注当前的功能；&#96;Composition API&#96;通过&#96;setup&#96;选项来组织代码。</span><br><span class="line"></span><br><span class="line">## view视图不需要根节点</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;span&gt;world&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+## Teleport
+
+Teleport翻译过来就是传送、远距离传送的意思；顾名思义，它可以将插槽中的元素或者组件传送到页面的其他位置。
+</code></pre>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showDialog = true&quot;</span>&gt;</span>打开模态框<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">teleport</span> <span class="attr">to</span>=<span class="string">&quot;body&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;modal&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;showDialog&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: fixed&quot;</span>&gt;</span></span><br><span class="line">      我是一个模态框</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showDialog = false&quot;</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">child-component</span> <span class="attr">:msg</span>=<span class="string">&quot;msg&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">child-component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">teleport</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里的Teleport中的modal div就被传送到了body的底部；虽然在不同的地方进行渲染，但是Teleport中的元素和组件还是属于父组件的逻辑子组件，还是可以和父组件进行数据通信。Teleport接收两个参数<code>to</code>和<code>disabled</code>：</p>
+<ul>
+<li><p>to - string：必须是有效的查询选择器或 HTMLElement，可以id或者class选择器等。</p>
+</li>
+<li><p>disabled - boolean：如果是true表示禁用teleport的功能，其插槽内容将不会移动到任何位置，默认false不禁用。</p>
+</li>
+</ul>
+<h2 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h2><p>   在Vue3中重新定义，异步组件需要通过<code>defineAsyncComponent</code>来进行显示的定义。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局定义异步组件</span></span><br><span class="line"><span class="comment">//src/main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineAsyncComponent &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> AsyncButton = defineAsyncComponent(<span class="function">() =&gt;</span></span><br><span class="line">  <span class="keyword">import</span>(<span class="string">&quot;./components/AsyncButton.vue&quot;</span>)</span><br><span class="line">);</span><br><span class="line">app.component(<span class="string">&quot;AsyncButton&quot;</span>, AsyncButton);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件内定义异步组件</span></span><br><span class="line"><span class="comment">// src/views/Home.vue</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineAsyncComponent &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    AsyncButton: defineAsyncComponent(<span class="function">() =&gt;</span></span><br><span class="line">      <span class="keyword">import</span>(<span class="string">&quot;../components/AsyncButton&quot;</span>)</span><br><span class="line">    ),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2022/01/11/Vue3-%E4%B8%80/">Vue3(一)</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 薛副官 的个人博客">薛副官</a></p>
+        <p><span>发布时间:</span>2022年01月11日 - 21时54分</p>
+        <p><span>最后更新:</span>2022年01月11日 - 21时59分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2022/01/11/Vue3-%E4%B8%80/" title="Vue3(一)">https://sirxue66.github.io/2022/01/11/Vue3-%E4%B8%80/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sirxue66.github.io/2022/01/11/Vue3-%E4%B8%80/　　作者: 薛副官" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> 
+            <span style="color: #e60027;">非商用，个人博客记录，如有侵犯请发邮：1781367484@qq.com，马上删除，感谢大佬！</span>
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2022/01/11/webpack-01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          webpack-01
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下载文件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VUE-3-0-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">VUE 3.0 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5Tree-shaking"><span class="toc-number">1.1.</span> <span class="toc-text">引入Tree-shaking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8FAPI"><span class="toc-number">1.3.</span> <span class="toc-text">响应式API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9B%91%E5%90%AC"><span class="toc-number">1.4.</span> <span class="toc-text">响应式监听</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">异步组件</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2022/01/11/webpack-01/" title="上一篇: webpack-01">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" title="下一篇: 下载文件">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/webpack-01/">webpack-01</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/Vue3-%E4%B8%80/">Vue3(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">下载文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/16/addHandler%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6/">addHandler添加事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/">事件类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/">vue懒加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/">vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/24/React-Component%E5%92%8CPureComponent%E7%9A%84%E4%BD%BF%E7%94%A8/">React Component和PureComponent的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/24/React-setState%E7%9A%84%E4%BD%BF%E7%94%A8/">React setState的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/">变量作用域与解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/16/%E8%AE%A4%E8%AF%86%E6%B5%8F%E8%A7%88%E5%99%A8/">认识浏览器</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/16/%E6%B5%85%E8%B0%88Canvas/">浅谈Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/16/Promise%E8%A1%A5%E5%85%8501/">Promise补充01</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/">AJAX封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/10/uni-App/">uni-App</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/10/Hbuild-%E5%92%8C-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">Hbuild 和 微信开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/10/VScode-%E6%97%A0%E5%8F%AF%E6%9B%BF%E4%BB%A3/">VScode 无可替代</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/14/css%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/13/git%E4%BD%BF%E7%94%A8/">git使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86(%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98)-%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7/">事件代理|事件捕获</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/">事件冒泡</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/Promise%E8%AE%A4%E8%AF%86/">Promise认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/11/%E5%8E%9F%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E9%93%BE/">原型 原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/%E5%BF%98%E5%B7%9D%E5%BD%BC%E5%B2%B8/">忘川彼岸</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/%E4%BF%AE%E6%94%B9element-UI%E5%8E%9F%E6%9C%89%E6%A0%B7%E5%BC%8F/">修改element-UI原有样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/%E4%BF%9D%E5%9B%BD%E5%A4%A7%E5%B8%88/">保国大师</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/vuex-%E4%BD%BF%E7%94%A8/">vuex 使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/">vue父子组件传值</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/vue%E6%AD%A3%E5%88%99%E6%A0%A1%E9%AA%8C%E4%BD%BF%E7%94%A8/">vue正则校验使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/15/%E6%96%87%E5%AD%97%E9%93%BE%E6%8E%A5%E5%8F%8A%E8%B7%AF%E7%94%B1/">文字链接及路由</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E7%9A%84%E5%B0%8F%E7%9C%BC%E7%9D%9B%E5%9B%BE%E6%A0%87/">登录密码的小眼睛图标</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/">电影推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/">前端规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E5%BD%B1%E7%89%87%E5%89%AA%E8%BE%91%E7%AC%AC%E4%B8%80%E7%AF%87/">影片剪辑第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AC%AC%E4%B8%80%E7%AF%87/">开发工具第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/13/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%AC%AC%E4%B8%80%E7%AF%87/">前端技术第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/22/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/">自我介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/21/hello-world/">Hello World</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2022 薛成
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 9;
+            alert(backgroundnum);
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
