@@ -7,30 +7,20 @@
   
   
   
-  <title>vue父子组件传值 | XueSir Blog</title>
+  <title>Base64\Blob\File | XueSir Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue 父子组件通信的四种方法prop$parent$emit$refs">
+  <meta name="description" content="Base64 Blob and File(比较浅，只记录了部分方法)介绍Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + &#x2F; ，64个字符组成。Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue父子组件传值">
-<meta property="og:url" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/index.html">
+<meta property="og:title" content="Base64\Blob\File">
+<meta property="og:url" content="https://sirxue66.github.io/2022/05/16/Base64-Blob-File/index.html">
 <meta property="og:site_name" content="XueSir Blog">
-<meta property="og:description" content="vue 父子组件通信的四种方法prop$parent$emit$refs">
+<meta property="og:description" content="Base64 Blob and File(比较浅，只记录了部分方法)介绍Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + &#x2F; ，64个字符组成。Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/01.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/02.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/03.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/04.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/05.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/06.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/07.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/08.png">
-<meta property="og:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/09.png">
-<meta property="article:published_time" content="2021-02-15T07:37:02.000Z">
-<meta property="article:modified_time" content="2021-02-15T08:03:35.353Z">
+<meta property="article:published_time" content="2022-05-16T13:23:26.000Z">
+<meta property="article:modified_time" content="2022-05-16T14:36:00.142Z">
 <meta property="article:author" content="薛成">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/01.png">
   
     <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
   
@@ -268,11 +258,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-vue父子组件传值" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Base64-Blob-File" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/" class="article-date">
-      <time datetime="2021-02-15T07:37:02.000Z" itemprop="datePublished">2021-02-15</time>
+      <a  href="/2022/05/16/Base64-Blob-File/" class="article-date">
+      <time datetime="2022-05-16T13:23:26.000Z" itemprop="datePublished">2022-05-16</time>
 </a>
 
     </div>
@@ -286,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue父子组件传值
+      Base64\Blob\File
     </h1>
   
 
@@ -302,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,15 +302,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="vue-父子组件通信的四种方法"><a href="#vue-父子组件通信的四种方法" class="headerlink" title="vue 父子组件通信的四种方法"></a>vue 父子组件通信的四种方法</h2><h3 id="prop"><a href="#prop" class="headerlink" title="prop"></a>prop</h3><h3 id="parent"><a href="#parent" class="headerlink" title="$parent"></a>$parent</h3><h3 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h3><h3 id="refs"><a href="#refs" class="headerlink" title="$refs"></a>$refs</h3><hr>
-<a id="more"></a>
-<h4 id="prop方法"><a href="#prop方法" class="headerlink" title="prop方法"></a>prop方法</h4><p>  父组件<br> <img src="01.png" alt="prop父组件"><br> 子组件直接接收使用即可<br> <img src="02.png" alt="子组件接收"></p>
-<h4 id="parent-方法"><a href="#parent-方法" class="headerlink" title="$parent 方法"></a>$parent 方法</h4><p> 父组件<br> <img src="03.png" alt="父组件方法"><br> 子组件,直接使用 $parent 调用父组件中的方法<br> <img src="04.png" alt="子组件调用"></p>
-<h4 id="emit方法"><a href="#emit方法" class="headerlink" title="$emit方法"></a>$emit方法</h4><p> 父组件<br> <img src="05.png"><br> 子组件<br> <img src="06.png"></p>
-<h4 id="refs-方法"><a href="#refs-方法" class="headerlink" title="$refs 方法"></a>$refs 方法</h4><p> 父组件，给子组件定义一个 ref ，直接使用 $refs 调用修改子组件中的变量<br> <img src="07.png"><br> <img src="08.png"><br> 子组件<br> <img src="09.png"></p>
-<h3 id="那么非父子组件之间怎么通信呢-那就需要用到-vuex-，下一章我们会详细讲解。"><a href="#那么非父子组件之间怎么通信呢-那就需要用到-vuex-，下一章我们会详细讲解。" class="headerlink" title="那么非父子组件之间怎么通信呢? 那就需要用到 vuex ，下一章我们会详细讲解。"></a>那么非父子组件之间怎么通信呢? 那就需要用到 <strong>vuex</strong> ，下一章我们会详细讲解。</h3><hr>
-<p> Thank you！</p>
-
+        <h1 id="Base64-Blob-and-File-比较浅，只记录了部分方法"><a href="#Base64-Blob-and-File-比较浅，只记录了部分方法" class="headerlink" title="Base64 Blob and File(比较浅，只记录了部分方法)"></a><strong>Base64 Blob and File(比较浅，只记录了部分方法)</strong></h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="Base64-是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。-64个字符为-A-Z-a-z-0-9-，64个字符组成。"><a href="#Base64-是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。-64个字符为-A-Z-a-z-0-9-，64个字符组成。" class="headerlink" title="Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + / ，64个字符组成。"></a>Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + / ，64个字符组成。</h3><h3 id="Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。"><a href="#Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。" class="headerlink" title="Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。"></a>Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。</h3><h3 id="File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。"><a href="#File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。" class="headerlink" title="File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。"></a>File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。</h3><p><strong>File是特殊的Blob，可以用在任意的Blob类型的context中。比如：FileReader、URL.createObjectURL()以及XMLHttpReqest.send()中</strong></p>
+<h2 id="三种类型转换"><a href="#三种类型转换" class="headerlink" title="三种类型转换"></a>三种类型转换</h2><h3 id="File转Base64（可用于文件预览）"><a href="#File转Base64（可用于文件预览）" class="headerlink" title="File转Base64（可用于文件预览）"></a>File转Base64（可用于文件预览）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;myinput&quot; multiple&gt;&lt;/br&gt;</span></span><br><span class="line"><span class="comment">// &lt;button id=&quot;Filebutton&quot;&gt;File 转 Base64&lt;/button&gt;&lt;br&gt;</span></span><br><span class="line"><span class="comment">// &lt;img id=&quot;myImg&quot; src=&quot;&quot; alt=&quot;&quot;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//文件转base64</span></span><br><span class="line"><span class="keyword">const</span> fileToBase64 = <span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">      reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        resolve(e.target.result)</span><br><span class="line">      &#125;</span><br><span class="line">      reader.readAsDataURL(file)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err)&#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;Filebutton&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  <span class="keyword">const</span> myfile = $(<span class="string">&#x27;myinput&#x27;</span>)[<span class="number">0</span>].files[<span class="number">0</span>];</span><br><span class="line">  fileToBase64(myfile).then(<span class="function"><span class="params">base64</span> =&gt;</span> &#123;</span><br><span class="line">    $(<span class="string">&#x27;#myImg&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,base64);</span><br><span class="line">  &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Blob转Base64（可用于文件预览）"><a href="#Blob转Base64（可用于文件预览）" class="headerlink" title="Blob转Base64（可用于文件预览）"></a>Blob转Base64（可用于文件预览）</h3><a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> blobToBase64 = <span class="function">(<span class="params">Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">      reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        resolve(e.target.result)</span><br><span class="line">      &#125;</span><br><span class="line">      reader.readAsDataURL(Blob)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err)&#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Base64-转-File-可用于文件上传"><a href="#Base64-转-File-可用于文件上传" class="headerlink" title="Base64 转 File(可用于文件上传)"></a>Base64 转 File(可用于文件上传)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;input style=&quot;display: none;&quot; type=&quot;text&quot; name=&quot;base64&quot; id=&quot;base64&quot; value=&quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQA.......</span></span><br><span class="line"><span class="comment">// &lt;button id=&quot;base64ToFile&quot;&gt;Base64 转 File&lt;/button&gt;</span></span><br><span class="line"><span class="keyword">const</span> base64ToFile = <span class="function">(<span class="params">base64, fileName</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> arr = base64.split(<span class="string">&#x27;,&#x27;</span>), </span><br><span class="line">        type = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>], </span><br><span class="line">        bstr = atob(arr[<span class="number">1</span>]), <span class="comment">//atob() 方法用于解码使用 base-64 编码的字符串。</span></span><br><span class="line">        n = bstr.length, </span><br><span class="line">        u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        u8arr[n] = bstr.charCodeAt(n);  <span class="comment">//charCodeAt() 方法可返回指定位置的字符的 Unicode 编码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> File([u8arr], fileName, &#123;type&#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;#base64ToFile&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; </span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="comment">// 获取base64</span></span><br><span class="line">    <span class="keyword">const</span> base64 = $(<span class="string">&quot;#base64&quot;</span>).val();</span><br><span class="line">    <span class="keyword">const</span> file = base64ToFile(base64, <span class="string">&#x27;fileName&#x27;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;我是 file:&quot;</span>, file);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Blob-转-File-可用于文件上传"><a href="#Blob-转-File-可用于文件上传" class="headerlink" title="Blob 转 File(可用于文件上传)"></a>Blob 转 File(可用于文件上传)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方法一*/</span></span><br><span class="line"><span class="keyword">const</span> blobToFile = <span class="function">(<span class="params">blob, fileName</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> file = <span class="keyword">new</span> File([blob], fileName, &#123;<span class="attr">type</span>: blob.type&#125;);</span><br><span class="line">    <span class="keyword">return</span> file;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*方法二 (此方法无ios兼容问题) */</span></span><br><span class="line"><span class="comment">// Blob() 与 File() 类似，但有两个不同之处，即 lastModifiedDate 和 name。Blob() 没有 lastModifiedDate 和 name。</span></span><br><span class="line"><span class="keyword">const</span> blobToFile = <span class="function">(<span class="params">blob, fileName</span>) =&gt;</span> &#123;</span><br><span class="line">  blob.lastModifiedDate  = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  blob.name = fileName;</span><br><span class="line">  <span class="keyword">return</span> blob;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Base64-转-Blob"><a href="#Base64-转-Blob" class="headerlink" title="Base64 转 Blob"></a>Base64 转 Blob</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> base64ToBlob = <span class="function"><span class="params">base64</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> arr = base64.split(<span class="string">&#x27;,&#x27;</span>), </span><br><span class="line">    type = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>], </span><br><span class="line">    bstr = atob(arr[<span class="number">1</span>]), </span><br><span class="line">    n = bstr.length, </span><br><span class="line">    u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span><br><span class="line">  <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">      u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Blob([u8arr], &#123;type&#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>补充</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blob = <span class="keyword">new</span> Blob([<span class="string">&quot;This is the sample data&quot;</span>],&#123;<span class="attr">type</span> : <span class="string">&quot;text/plain&quot;</span>&#125;);</span><br><span class="line"><span class="keyword">const</span> file = <span class="keyword">new</span> File([blob], <span class="string">&quot;This is the sample data&quot;</span>, &#123;<span class="attr">type</span>: blob.type&#125;);</span><br><span class="line"></span><br><span class="line">file <span class="keyword">instanceof</span> File  <span class="comment">//true</span></span><br><span class="line">file <span class="keyword">instanceof</span> Blob  <span class="comment">//true</span></span><br><span class="line">blob <span class="keyword">instanceof</span> File  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -328,13 +318,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/">vue父子组件传值</a></p>
+        <p><span>本文标题:</span><a  href="/2022/05/16/Base64-Blob-File/">Base64\Blob\File</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 薛副官 的个人博客">薛副官</a></p>
-        <p><span>发布时间:</span>2021年02月15日 - 15时37分</p>
-        <p><span>最后更新:</span>2021年02月15日 - 16时03分</p>
+        <p><span>发布时间:</span>2022年05月16日 - 21时23分</p>
+        <p><span>最后更新:</span>2022年05月16日 - 22时36分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/" title="vue父子组件传值">https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sirxue66.github.io/2021/02/15/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/　　作者: 薛副官" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2022/05/16/Base64-Blob-File/" title="Base64\Blob\File">https://sirxue66.github.io/2022/05/16/Base64-Blob-File/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sirxue66.github.io/2022/05/16/Base64-Blob-File/　　作者: 薛副官" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> 
@@ -346,18 +336,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2021/02/15/vuex-%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          vuex 使用
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2021/02/15/vue%E6%AD%A3%E5%88%99%E6%A0%A1%E9%AA%8C%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue正则校验使用</div>
+    <a  href="/2022/01/11/webpack-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack-01</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -369,7 +350,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">vue 父子组件通信的四种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prop"><span class="toc-number">1.1.</span> <span class="toc-text">prop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#parent"><span class="toc-number">1.2.</span> <span class="toc-text">$parent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emit"><span class="toc-number">1.3.</span> <span class="toc-text">$emit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#refs"><span class="toc-number">1.4.</span> <span class="toc-text">$refs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#prop%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">prop方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#parent-%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">$parent 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#emit%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">$emit方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#refs-%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">$refs 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E6%80%8E%E4%B9%88%E9%80%9A%E4%BF%A1%E5%91%A2-%E9%82%A3%E5%B0%B1%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0-vuex-%EF%BC%8C%E4%B8%8B%E4%B8%80%E7%AB%A0%E6%88%91%E4%BB%AC%E4%BC%9A%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E3%80%82"><span class="toc-number">1.5.</span> <span class="toc-text">那么非父子组件之间怎么通信呢? 那就需要用到 vuex ，下一章我们会详细讲解。</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Base64-Blob-and-File-%E6%AF%94%E8%BE%83%E6%B5%85%EF%BC%8C%E5%8F%AA%E8%AE%B0%E5%BD%95%E4%BA%86%E9%83%A8%E5%88%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Base64 Blob and File(比较浅，只记录了部分方法)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Base64-%E6%98%AF%E4%B8%80%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%88%B0%E6%96%87%E6%9C%AC%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99%EF%BC%8C%E6%98%AF%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%A7%A3%E9%87%8A%E6%88%90radix-64%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F%E5%90%8E%E5%8F%AF%E4%BB%A5%E7%94%A8ASCII%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%A1%A8%E7%A4%BA%E5%87%BA%E6%9D%A5%E3%80%82-64%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%BA-A-Z-a-z-0-9-%EF%BC%8C64%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%BB%84%E6%88%90%E3%80%82"><span class="toc-number">1.1.1.</span> <span class="toc-text">Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + &#x2F; ，64个字符组成。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Blob%EF%BC%9A%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84%E3%80%81%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B1%BB%E6%96%87%E4%BB%B6%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%98%AFFile%E7%9A%84%E7%88%B6%E7%B1%BB%E3%80%82Blob%E8%A1%A8%E7%A4%BA%E7%9A%84%E4%B8%8D%E4%B8%80%E5%AE%9A%E7%9A%84%E6%98%AFjavascript%E5%8E%9F%E7%94%9F%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82"><span class="toc-number">1.1.2.</span> <span class="toc-text">Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File%EF%BC%9A%E5%9F%BA%E4%BA%8EBolb%EF%BC%8C%E7%BB%A7%E6%89%BF%E4%BA%86Blob%E4%B8%8A%E7%9A%84%E7%89%B9%E6%80%A7%EF%BC%8C%E5%B9%B6%E5%B0%86%E5%85%B6%E6%8B%93%E5%B1%95%E4%BD%BF%E5%85%B6%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82File%E6%8F%90%E4%BE%9B%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%B9%B6%E5%85%81%E8%AE%B8%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E4%BD%BF%E7%94%A8javascript%E8%AE%BF%E9%97%AE%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">三种类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#File%E8%BD%ACBase64%EF%BC%88%E5%8F%AF%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">File转Base64（可用于文件预览）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Blob%E8%BD%ACBase64%EF%BC%88%E5%8F%AF%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">Blob转Base64（可用于文件预览）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base64-%E8%BD%AC-File-%E5%8F%AF%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.2.3.</span> <span class="toc-text">Base64 转 File(可用于文件上传)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Blob-%E8%BD%AC-File-%E5%8F%AF%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.2.4.</span> <span class="toc-text">Blob 转 File(可用于文件上传)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base64-%E8%BD%AC-Blob"><span class="toc-number">1.2.5.</span> <span class="toc-text">Base64 转 Blob</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -442,13 +423,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2021/02/15/vuex-%E4%BD%BF%E7%94%A8/" title="上一篇: vuex 使用">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2021/02/15/vue%E6%AD%A3%E5%88%99%E6%A0%A1%E9%AA%8C%E4%BD%BF%E7%94%A8/" title="下一篇: vue正则校验使用">
+            <a  href="/2022/01/11/webpack-01/" title="下一篇: webpack-01">
                 <i class="fa fa-angle-right"></i>
             </a>
         

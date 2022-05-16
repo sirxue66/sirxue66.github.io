@@ -258,6 +258,78 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Base64-Blob-File" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/05/16/Base64-Blob-File/" class="article-date">
+      <time datetime="2022-05-16T13:23:26.000Z" itemprop="datePublished">2022-05-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/05/16/Base64-Blob-File/">Base64\Blob\File</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="Base64-Blob-and-File-比较浅，只记录了部分方法"><a href="#Base64-Blob-and-File-比较浅，只记录了部分方法" class="headerlink" title="Base64 Blob and File(比较浅，只记录了部分方法)"></a><strong>Base64 Blob and File(比较浅，只记录了部分方法)</strong></h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="Base64-是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。-64个字符为-A-Z-a-z-0-9-，64个字符组成。"><a href="#Base64-是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。-64个字符为-A-Z-a-z-0-9-，64个字符组成。" class="headerlink" title="Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + / ，64个字符组成。"></a>Base64: 是一组转换二进制到文本的编码规则，是的二进制数据在解释成radix-64的表现形式后可以用ASCII字符串的格式表示出来。 64个字符为 A-Z a-z 0-9 + / ，64个字符组成。</h3><h3 id="Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。"><a href="#Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。" class="headerlink" title="Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。"></a>Blob：表示一个不可变的、原始数据的类文件对象，是File的父类。Blob表示的不一定的是javascript原生格式的数据。</h3><h3 id="File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。"><a href="#File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。" class="headerlink" title="File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。"></a>File：基于Bolb，继承了Blob上的特性，并将其拓展使其支持用户系统上的文件。File提供文件的相关信息，并允许在网页中使用javascript访问其内容。</h3><p><strong>File是特殊的Blob，可以用在任意的Blob类型的context中。比如：FileReader、URL.createObjectURL()以及XMLHttpReqest.send()中</strong></p>
+<h2 id="三种类型转换"><a href="#三种类型转换" class="headerlink" title="三种类型转换"></a>三种类型转换</h2><h3 id="File转Base64（可用于文件预览）"><a href="#File转Base64（可用于文件预览）" class="headerlink" title="File转Base64（可用于文件预览）"></a>File转Base64（可用于文件预览）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;myinput&quot; multiple&gt;&lt;/br&gt;</span></span><br><span class="line"><span class="comment">// &lt;button id=&quot;Filebutton&quot;&gt;File 转 Base64&lt;/button&gt;&lt;br&gt;</span></span><br><span class="line"><span class="comment">// &lt;img id=&quot;myImg&quot; src=&quot;&quot; alt=&quot;&quot;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//文件转base64</span></span><br><span class="line"><span class="keyword">const</span> fileToBase64 = <span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">      reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        resolve(e.target.result)</span><br><span class="line">      &#125;</span><br><span class="line">      reader.readAsDataURL(file)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err)&#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;Filebutton&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  <span class="keyword">const</span> myfile = $(<span class="string">&#x27;myinput&#x27;</span>)[<span class="number">0</span>].files[<span class="number">0</span>];</span><br><span class="line">  fileToBase64(myfile).then(<span class="function"><span class="params">base64</span> =&gt;</span> &#123;</span><br><span class="line">    $(<span class="string">&#x27;#myImg&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,base64);</span><br><span class="line">  &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Blob转Base64（可用于文件预览）"><a href="#Blob转Base64（可用于文件预览）" class="headerlink" title="Blob转Base64（可用于文件预览）"></a>Blob转Base64（可用于文件预览）</h3>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2022/05/16/Base64-Blob-File/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-webpack-01" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -945,81 +1017,9 @@
 
 
   
-    <article id="post-变量作用域与解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="article-date">
-      <time datetime="2021-06-16T06:47:06.000Z" itemprop="datePublished">2021-06-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/">变量作用域与解构赋值</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="在javascript中，用var声明的变量实际上是有作用域的"><a href="#在javascript中，用var声明的变量实际上是有作用域的" class="headerlink" title="在javascript中，用var声明的变量实际上是有作用域的"></a>在javascript中，用var声明的变量实际上是有作用域的</h2><pre><code>如果一个变量在函数体内部申明，则该变量的作用域为整个函数体，在函数体外不可引用该变量：</code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">    x = x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">x = x + <span class="number">2</span>; <span class="comment">// ReferenceError! 无法在函数体外引用变量x</span></span><br></pre></td></tr></table></figure>
-<pre><code>如果两个不同的函数各自申明了同一个变量，那么该变量只在各自的函数体内起作用。换句话说，不同函数内部的同名变量互相独立，互不影响。</code></pre>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
