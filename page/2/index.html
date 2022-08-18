@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,81 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-事件类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2021-11-16T14:13:46.000Z" itemprop="datePublished">2021-11-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/">事件类型</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="web-—-事件类型"><a href="#web-—-事件类型" class="headerlink" title="web  —-  事件类型"></a>web  —-  事件类型</h1><h2 id="第一部分：UI事件"><a href="#第一部分：UI事件" class="headerlink" title="第一部分：UI事件"></a>第一部分：UI事件</h2><h3 id="UI事件中主要包括-load-unload-abort-error-select-resize-scroll事件。"><a href="#UI事件中主要包括-load-unload-abort-error-select-resize-scroll事件。" class="headerlink" title="UI事件中主要包括     load,    unload,    abort,    error,    select,    resize,    scroll事件。"></a><strong>UI事件中主要包括     load,    unload,    abort,    error,    select,    resize,    scroll事件。</strong></h3><p><strong>1.load事件</strong></p>
+<p>　　　<strong>此事件为当页面完全加载完之后（包括所有的图像、js文件、css文件等外部资源），就会触发window上面的load事件。</strong></p>
+<p>​         这个事件还可以用在其他元素上，比如图像元素 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;smile.png&quot;</span> onload=<span class="string">&quot;alert(&#x27;loaded&#x27;)&quot;</span>&gt;　</span><br></pre></td></tr></table></figure>
+<p>​         当然也可以使用JS来实现 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img=<span class="built_in">document</span>.getElementById(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">EventUtil.addHandler(img,<span class="string">&quot;load&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      event=EventUtil.getEvent(event);</span><br><span class="line">      alert(EventUtil.getTarget(event).src);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/16/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-vue懒加载" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -898,81 +973,6 @@
       
         <p class="article-more-link">
           <a   href="/2021/05/18/AJAX%E5%B0%81%E8%A3%85/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-网络协议" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="article-date">
-      <time datetime="2021-05-18T10:39:24.000Z" itemprop="datePublished">2021-05-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="DNS解析（Domain-Name-Server）【域名服务器】"><a href="#DNS解析（Domain-Name-Server）【域名服务器】" class="headerlink" title="DNS解析（Domain Name Server）【域名服务器】"></a>DNS解析（Domain Name Server）【域名服务器】</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><pre><code>域名 与 IP 转换的服务器</code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><pre><code>DNS中保存一种域名与ip对应的表
-一个域名只能对应一个ip地址，一个ip地址可以对应多个域名</code></pre>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><pre><code> 浏览器，输入域名  --&gt;  本地DNS服务器（其实就是服务商提供的DNS服务器，连网），如果本地DNS服务器没有缓存，就会访问远程DNS服务器寻找ip地址。
-                    --&gt;   从其他远程DNS服务器拿到ip地址后，会将ip地址发给浏览器，并写入缓存。</code></pre>
-<h2 id="IP地址：【互联网协议-地址】"><a href="#IP地址：【互联网协议-地址】" class="headerlink" title="IP地址：【互联网协议 地址】"></a>IP地址：【互联网协议 地址】</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><pre><code>分配给用户上网用的互联网协议</code></pre>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/" rel="tag">Net</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
