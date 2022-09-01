@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,86 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-iframe父子通信" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/09/01/iframe%E7%88%B6%E5%AD%90%E9%80%9A%E4%BF%A1/" class="article-date">
+      <time datetime="2022-09-01T11:24:42.000Z" itemprop="datePublished">2022-09-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/09/01/iframe%E7%88%B6%E5%AD%90%E9%80%9A%E4%BF%A1/">iframe父子通信</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="一、父子页面同源的情况"><a href="#一、父子页面同源的情况" class="headerlink" title="一、父子页面同源的情况"></a>一、父子页面同源的情况</h2><p>现在有两个同源的iframe嵌套页面，父页面parent.html,子页面child.html，二者代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// parent.html</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&lt;iframe</span><br><span class="line">  id=<span class="string">&#x27;testIframe&#x27;</span></span><br><span class="line">  name=<span class="string">&#x27;test&#x27;</span></span><br><span class="line">  src=<span class="string">&#x27;./child.html&#x27;</span></span><br><span class="line">  frameborder=<span class="string">&#x27;0&#x27;</span></span><br><span class="line">  scrolling=<span class="string">&#x27;no&#x27;</span>&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parentConsole</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// child.html</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">childConsole</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-父页面调用子页面方法"><a href="#1-父页面调用子页面方法" class="headerlink" title="1. 父页面调用子页面方法"></a>1. 父页面调用子页面方法</h3><p>可以通过iframe的id或者name属性拿到iframe的window对象，然后直接调用子页面方法即可。我们把需要发送给子页面的信息放到方法childConsole里。如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframeDom = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;testIframe&#x27;</span>);</span><br><span class="line"><span class="comment">// 需要等iframe加载完成后执行，不然有可能会报错</span></span><br><span class="line">iframeDom.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">&#x27;hello, child!&#x27;</span>;</span><br><span class="line">    iframeDom.contentWindow.childConsole(data);</span><br><span class="line">&#125;</span><br><span class="line">或</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iframeDom = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;testIframe&#x27;</span>);</span><br><span class="line">iframeDom.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">&#x27;hello, child!&#x27;</span>;</span><br><span class="line">    test.window.childConsole(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-子页面调用父页面方法"><a href="#2-子页面调用父页面方法" class="headerlink" title="2. 子页面调用父页面方法"></a>2. 子页面调用父页面方法</h3><p>可以通过window.top或者window.parent拿到父页面的window对象。然后直接调用父页面的方法即可。同样，把需要发给父页面的信息放到方法parentConsole里。如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="string">&#x27;hello, parent!&#x27;</span>;</span><br><span class="line"><span class="built_in">window</span>.top.parentConsole(data); <span class="comment">// 或者使用window.parent.parentConsole(data)也行</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、父子页面跨域的情况"><a href="#二、父子页面跨域的情况" class="headerlink" title="二、父子页面跨域的情况"></a>二、父子页面跨域的情况</h2><p>可以通过postMessage来实现通信。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">otherWindow.postMessage(message, targetOrigin, [transfer]);</span><br><span class="line"><span class="comment">// 其中的参数：</span></span><br><span class="line"><span class="comment">// otherWindow</span></span><br><span class="line"><span class="comment">// 目标窗口。比如 iframe 的 contentWindow 属性</span></span><br><span class="line"><span class="comment">// message</span></span><br><span class="line"><span class="comment">// 将要发送到其他 窗口 的数据。</span></span><br><span class="line"><span class="comment">// targetOrigin</span></span><br><span class="line"><span class="comment">// 目标窗口的域。其值可以是字符串&quot;*&quot;（表示无限制）或者一个 URI。不提供确切的 targetOrigin 将导致数据泄露到任何对数据感兴趣的恶意站点。</span></span><br></pre></td></tr></table></figure>
+<p>现在有两个不同源的iframe嵌套页面，父页面<a target="_blank" rel="noopener" href="http://127.0.0.1:8001/parent.html,%E5%AD%90%E9%A1%B5%E9%9D%A2http://127.0.0.1:8002/child.html%EF%BC%88%E6%9C%AC%E5%9C%B0%E5%88%86%E5%88%AB%E5%AF%B9%E4%B8%A4%E4%B8%AAhtml%E8%B5%B7%E4%BA%86%E4%B8%A4%E4%B8%AA%E6%9C%8D%E5%8A%A1%EF%BC%89%EF%BC%8C%E5%85%B6%E4%B8%AD%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%A5%97%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B%EF%BC%9A">http://127.0.0.1:8001/parent.html,子页面http://127.0.0.1:8002/child.html（本地分别对两个html起了两个服务），其中父页面嵌套部分代码如下：</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://127.0.0.1:8001/parent.html</span></span><br><span class="line">&lt;iframe</span><br><span class="line">  id=<span class="string">&#x27;testIframe&#x27;</span></span><br><span class="line">  name=<span class="string">&#x27;test&#x27;</span></span><br><span class="line">  src=<span class="string">&#x27;http://127.0.0.1:8002/child.html&#x27;</span></span><br><span class="line">  frameborder=<span class="string">&#x27;0&#x27;</span></span><br><span class="line">  scrolling=<span class="string">&#x27;no&#x27;</span>&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>父页面发送信息，子页面接收信息<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://127.0.0.1:8001/parent.html</span></span><br><span class="line"><span class="comment">// 父页面发送信息</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;testIframe&#x27;</span>).onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    test.window.postMessage(<span class="string">&#x27;hello, child!&#x27;</span>, <span class="string">&#x27;http://127.0.0.1:8002&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://127.0.0.1:8002/child.html</span></span><br><span class="line"><span class="comment">// 子页面接收信息</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;message&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过origin对消息进行过滤，避免遭到XSS攻击</span></span><br><span class="line">    <span class="keyword">if</span> (e.origin === <span class="string">&#x27;http://127.0.0.1:8001&#x27;</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e.origin) <span class="comment">// 父页面所在的域</span></span><br><span class="line">        <span class="built_in">console</span>.log(e.data)  <span class="comment">// 父页面发送的消息, hello, child!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></li>
+<li>子页面发送信息，父页面接收信息<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://127.0.0.1:8002/child.html</span></span><br><span class="line"><span class="built_in">window</span>.top.postMessage(<span class="string">&#x27;hello, parent!&#x27;</span>, <span class="string">&#x27;http://127.0.0.1:8001&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://127.0.0.1:8001/parent.html</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;message&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过origin对消息进行过滤，避免遭到XSS攻击</span></span><br><span class="line">    <span class="keyword">if</span> (e.origin === <span class="string">&#x27;http://127.0.0.1:8002&#x27;</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e.origin) <span class="comment">// 子页面所在的域</span></span><br><span class="line">        <span class="built_in">console</span>.log(e.data)  <span class="comment">// 子页面发送的消息, hello, parent!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+通过postMessage和window.addEventListener(‘message’, e =&gt; { … })配合使用，我们就能够完成跨域iframe父子页面的通信。<br>当然对于同源的iframe父子页面也可以采用postMessage的方式来发送接收信息。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe/" rel="tag">iframe</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-正则篇" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -914,87 +994,6 @@
       
         <p class="article-more-link">
           <a   href="/2022/01/11/Vue3-%E4%B8%80/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-下载文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" class="article-date">
-      <time datetime="2021-12-14T12:23:57.000Z" itemprop="datePublished">2021-12-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">下载文件</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="文件下载的五种方式："><a href="#文件下载的五种方式：" class="headerlink" title="文件下载的五种方式："></a><strong>文件下载的五种方式：</strong></h1><h1 id="form表单提交"><a href="#form表单提交" class="headerlink" title="form表单提交"></a>form表单提交</h1><p>这是以前常使用的传统方式，毕竟那个年代，没那么多好用的新特性呀。</p>
-<p>道理也很简单，为一个下载按钮添加 <code>click</code>事件，点击时动态生成一个表单，利用表单提交的功能来实现文件的下载（实际上表单的提交就是发送一个请求）</p>
-<p>来看下如何生成一个表单，生成怎么样的一个表单：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * 下载文件</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;String&#125;</span> <span class="variable">path</span></span> - 请求的地址</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;String&#125;</span> <span class="variable">fileName</span></span> - 文件名</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">downloadFile</span> (<span class="params">downloadUrl, fileName</span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 创建表单</span></span><br><span class="line"> </span><br><span class="line"> <span class="keyword">const</span> formObj = <span class="built_in">document</span>.createElement(<span class="string">&#x27;form&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">    formObj.action = downloadUrl;</span><br><span class="line"> </span><br><span class="line">    formObj.method = <span class="string">&#x27;get&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">    formObj.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 创建input，主要是起传参作用</span></span><br><span class="line"> </span><br><span class="line"> <span class="keyword">const</span> formItem = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">    formItem.value = fileName; <span class="comment">// 传参的值</span></span><br><span class="line"> </span><br><span class="line">    formItem.name = <span class="string">&#x27;fileName&#x27;</span>; <span class="comment">// 传参的字段名</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 插入到网页中</span></span><br><span class="line"> </span><br><span class="line">    formObj.appendChild(formItem);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(formObj);</span><br><span class="line"> </span><br><span class="line">    formObj.submit(); <span class="comment">// 发送请求</span></span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(formObj); <span class="comment">// 发送完清除掉</span></span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>传统方式，兼容性好，不会出现URL长度限制问题</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>无法知道下载的进度</li>
-<li>无法直接下载浏览器可直接预览的文件类型（如txt/png等）</li>
-</ul>
-<h1 id="open或location-href"><a href="#open或location-href" class="headerlink" title="open或location.href"></a>open或location.href</h1><p>最简单最直接的方式，实际上跟 <code>a</code>标签访问下载链接一样</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2021/12/14/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>

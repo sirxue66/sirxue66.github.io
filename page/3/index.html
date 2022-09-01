@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,74 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Promise补充01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/06/16/Promise%E8%A1%A5%E5%85%8501/" class="article-date">
+      <time datetime="2021-06-16T02:54:54.000Z" itemprop="datePublished">2021-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/06/16/Promise%E8%A1%A5%E5%85%8501/">Promise补充01</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Promise-最大的好处就是在异步执行流程中，把执行代码和处理结果的代码分离了"><a href="#Promise-最大的好处就是在异步执行流程中，把执行代码和处理结果的代码分离了" class="headerlink" title="Promise 最大的好处就是在异步执行流程中，把执行代码和处理结果的代码分离了"></a>Promise 最大的好处就是在异步执行流程中，把执行代码和处理结果的代码分离了</h2><p>看一个简单的例子：<br>    定义一个执行函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeOut = <span class="built_in">Math</span>.random() * <span class="number">2</span>;</span><br><span class="line">    log(<span class="string">&#x27;set timeout to: &#x27;</span> + timeOut + <span class="string">&#x27; seconds.&#x27;</span>);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (timeOut &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            log(<span class="string">&#x27;call resolve()...&#x27;</span>);</span><br><span class="line">            resolve(<span class="string">&#x27;200 OK&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            log(<span class="string">&#x27;call reject()...&#x27;</span>);</span><br><span class="line">            reject(<span class="string">&#x27;timeout in &#x27;</span> + timeOut + <span class="string">&#x27; seconds.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, timeOut * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个test()函数有两个参数，这两个参数都是函数，如果执行成功，我们将调用resolve(‘200 OK’)，如果执行失败，我们将调用reject(‘timeout in ‘ + timeOut + ‘ seconds.’)。可以看出，test()函数只关心自身的逻辑，并不关心具体的resolve和reject将如何处理结果。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+      
+        <p class="article-more-link">
+          <a   href="/2021/06/16/Promise%E8%A1%A5%E5%85%8501/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-AJAX封装" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -864,73 +932,6 @@ clear:right：清除该元素右边的浮动元素
 
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Promise认识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/04/11/Promise%E8%AE%A4%E8%AF%86/" class="article-date">
-      <time datetime="2021-04-11T10:33:51.000Z" itemprop="datePublished">2021-04-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/11/Promise%E8%AE%A4%E8%AF%86/">Promise认识</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Promise-认识与理解"><a href="#Promise-认识与理解" class="headerlink" title="Promise 认识与理解"></a>Promise 认识与理解</h2><h3 id="首先大家都知道"><a href="#首先大家都知道" class="headerlink" title="首先大家都知道"></a>首先大家都知道</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// promise  同步的</span></span><br><span class="line"> <span class="keyword">const</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"> &#125;)</span><br><span class="line"><span class="comment">// a.then    异步的</span></span><br><span class="line"> <span class="keyword">const</span> b = a.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="为什么要用Promise呢？"><a href="#为什么要用Promise呢？" class="headerlink" title="为什么要用Promise呢？"></a>为什么要用Promise呢？</h3>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2021/04/11/Promise%E8%AE%A4%E8%AF%86/#more">查看更多 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
