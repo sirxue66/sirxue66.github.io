@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,81 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-React-Component和PureComponent的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/10/24/React-Component%E5%92%8CPureComponent%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+      <time datetime="2021-10-24T13:38:00.000Z" itemprop="datePublished">2021-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/10/24/React-Component%E5%92%8CPureComponent%E7%9A%84%E4%BD%BF%E7%94%A8/">React Component和PureComponent的使用</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Component存在的问题"><a href="#Component存在的问题" class="headerlink" title="Component存在的问题?"></a>Component存在的问题?</h3><pre><code>1). 父组件重新render(), 当前组件也会重新执行render(), 即使没有任何变化
+2). 当前组件setState(), 重新执行render(), 即使state没有任何变化</code></pre>
+<h3 id="解决Component存在的问题"><a href="#解决Component存在的问题" class="headerlink" title="解决Component存在的问题"></a>解决Component存在的问题</h3><pre><code>1). 原因: 组件的componentShouldUpdate()默认返回true, 即使数据没有变化render()都会重新执行
+2). 办法1: 重写shouldComponentUpdate(nextProp,nextState), 判断如果数据有变化返回true, 否则返回false
+3). 办法2: 使用PureComponent代替Component
+4). 说明: 一般都使用PureComponent来优化组件性能</code></pre>
+<h3 id="PureComponent的基本原理"><a href="#PureComponent的基本原理" class="headerlink" title="PureComponent的基本原理"></a>PureComponent的基本原理</h3><pre><code>1). 重写实现shouldComponentUpdate()
+2). 对组件的新/旧state和props中的数据进行 浅比较 , 如果都没有变化, 返回false, 否则返回true</code></pre>
+<p><strong>注意是浅比较</strong><br>    3). 一旦componentShouldUpdate()返回false不再执行用于更新的render()</p>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate (nextProps, nextState) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;shouldComponentUpdate()&#x27;</span>)</span><br><span class="line">      <span class="comment">// 比较新旧props中的和state数据, 如果没有一个变化的返回false, 否则true, m1 m2分别是响应数据</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">this</span>.props.m1===nextProps.m1 &amp;&amp; <span class="built_in">this</span>.state.m2===nextState.m2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-React-setState的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -889,73 +964,6 @@
       
         <p class="article-more-link">
           <a   href="/2021/05/10/Hbuild-%E5%92%8C-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-VScode-无可替代" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/05/10/VScode-%E6%97%A0%E5%8F%AF%E6%9B%BF%E4%BB%A3/" class="article-date">
-      <time datetime="2021-05-10T09:48:27.000Z" itemprop="datePublished">2021-05-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/05/10/VScode-%E6%97%A0%E5%8F%AF%E6%9B%BF%E4%BB%A3/">VScode 无可替代</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="前端开发工具-Visual-Studio-Code-（力荐）"><a href="#前端开发工具-Visual-Studio-Code-（力荐）" class="headerlink" title="前端开发工具   Visual Studio Code （力荐）"></a>前端开发工具   Visual Studio Code （力荐）</h2><h3 id="优点：-稳定、流畅、免费、轻量级、支持多种语言"><a href="#优点：-稳定、流畅、免费、轻量级、支持多种语言" class="headerlink" title="优点： 稳定、流畅、免费、轻量级、支持多种语言"></a>优点： 稳定、流畅、免费、轻量级、支持多种语言</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><pre><code>不多说，直接去官网下载</code></pre>
-<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p><strong>一款合格的VScode是不能缺乏插件的。</strong><br>Better Comments:安装此插件后你将会有更好的注释体验，Better Comments会帮助你将注释分类而标上不同颜色<br>Chinese (Simplified) Language Pack for Visual Studio Code：汉化包，可提供本地化界面<br>Code Spell Checker：这个插件会帮你检查出所有可能的拼写错误<br>LTeX：用LaTeX排版论文必备，强烈建议安装<br>Markdown All in One和Markdown Preview Enhanced：安装了这两个才算配置好了Markdown环境，后面那个可以提供md文件的实时预览<br>Matlab：这个不多说了，数模必备<br>Path Intellisense：帮助自动补全文件路径<br>Python：现在还有人不学Python的吗<br>vscode-icons：提供多种文件夹图标，可以把文件夹的图标彼此区分开来</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2021/05/10/VScode-%E6%97%A0%E5%8F%AF%E6%9B%BF%E4%BB%A3/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
