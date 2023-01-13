@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,82 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-搭建本地服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+      <time datetime="2023-01-13T07:14:37.000Z" itemprop="datePublished">2023-01-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">搭建本地服务器</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="搭建本地静态服务器"><a href="#搭建本地静态服务器" class="headerlink" title="搭建本地静态服务器"></a>搭建本地静态服务器</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于现在的单页面应用，基本都有devServer的功能，实现开发时的热更新，比如：webcakpack、vite、parcel等打包工具，都有本地服务器热更新的功能。但是对于一些老的项目，原生的html，js页面，项目目录没有规律，有单独的js文件，或者js直接写在html中，并且html，js文件很多，上百个html等，使用webpack来启动本地项目就非常困难了，因为文件目录没有规律可言。</p>
+<h3 id="原生开发问题："><a href="#原生开发问题：" class="headerlink" title="原生开发问题："></a>原生开发问题：</h3><p>原生项目，每次更改代码后，无论改动大小，都需要手动刷新页面，并且需要经常清空缓存并刷新页面，很是烦人；</p>
+<h3 id="使用live-server搭建本地开发服务器"><a href="#使用live-server搭建本地开发服务器" class="headerlink" title="使用live-server搭建本地开发服务器"></a>使用live-server搭建本地开发服务器</h3><p><strong><em>下载live-server</em></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live-server -D</span><br></pre></td></tr></table></figure>
+<p><strong><em>1，命令行方式</em></strong><br>首先在项目下npm初始化:npm init -y;<br>然后可以选择全局安装或者本地安装live-server，然后在package.json的scripts属性中添加如下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">        &quot;server&quot;: &quot;live-server ./ --port=8181 --host=localhost --proxy=/api:http://www.abc.com/api/&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>*<em>2，node方式**</em><br>使用npm init -y初始化一个目录，新建live-server.js作为配置文件，我的文件配置如下：</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/" rel="tag">node</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-layui-弹出层关闭问题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -971,83 +1047,6 @@
 
 
   
-    <article id="post-网站换肤方案" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2022/08/12/%E7%BD%91%E7%AB%99%E6%8D%A2%E8%82%A4%E6%96%B9%E6%A1%88/" class="article-date">
-      <time datetime="2022-08-12T09:42:27.000Z" itemprop="datePublished">2022-08-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2022/08/12/%E7%BD%91%E7%AB%99%E6%8D%A2%E8%82%A4%E6%96%B9%E6%A1%88/">网站换肤方案</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="网站换肤方案实践"><a href="#网站换肤方案实践" class="headerlink" title="网站换肤方案实践"></a>网站换肤方案实践</h2><p><strong>Demo Git地址：<a target="_blank" rel="noopener" href="https://github.com/sirxue66/changeskin">https://github.com/sirxue66/changeskin</a></strong><br><strong>Demo 预览地址：<a href="https://sirxue66.github.io/changeskin">https://sirxue66.github.io/changeskin</a></strong></p>
-<h3 id="方案一-css变量"><a href="#方案一-css变量" class="headerlink" title="方案一  css变量"></a>方案一  css变量</h3><p>本人比较推荐的实现方式，方便快捷，重点是代码量小，不用写很多样式。<br>至于兼容性，可以通过 css-vars-ponyfill 对 CSS 变量进行兼容处理。<br>核心就是：通过 body.style.setProperty(key, value) 动态修改 body 上的 CSS 变量，使得页面上的其他部分可以应用最新的 CSS 变量对应的样式。<br>示例代码：<br>定义全局变量</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line"><span class="attribute">--theme-bg</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">--theme-color</span>: <span class="built_in">rgb</span>(<span class="number">51</span>, <span class="number">50</span>, <span class="number">50</span>);</span><br><span class="line"><span class="attribute">--theme-img-bg</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">--theme-boder-color</span>: <span class="number">#d6d6d6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css中使用var()函数使用变量</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="built_in">var</span>(--theme-boder-color);</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--theme-bg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>修改root下的css变量，从而修改全局样式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">documents.body.style.setProperty(<span class="string">&#x27;--theme-color&#x27;</span>, value)</span><br></pre></td></tr></table></figure>
-<h3 id="方案二-css样式覆盖"><a href="#方案二-css样式覆盖" class="headerlink" title="方案二  css样式覆盖"></a>方案二  css样式覆盖</h3>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2022/08/12/%E7%BD%91%E7%AB%99%E6%8D%A2%E8%82%A4%E6%96%B9%E6%A1%88/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1059,7 +1058,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2022 薛成
+                &copy; 2023 薛成
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy

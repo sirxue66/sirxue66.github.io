@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,79 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2021-11-03T14:11:12.000Z" itemprop="datePublished">2021-11-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/">vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题"><a href="#vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题" class="headerlink" title="vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题"></a>vue2父组件传递props异步数据到子组件的数据更新不及时和生命周期问题</h2><h3 id="办法一："><a href="#办法一：" class="headerlink" title="办法一："></a>办法一：</h3><p>​         使用v-if可以解决报错问题，和created为空问题 </p>
+<h3 id="parent-vue"><a href="#parent-vue" class="headerlink" title="parent.vue"></a>parent.vue</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">  父组件</span><br><span class="line">  &lt;child :child-object=<span class="string">&quot;asyncObject&quot;</span> v-<span class="keyword">if</span>=<span class="string">&quot;flag&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line"> <span class="keyword">import</span> child <span class="keyword">from</span> <span class="string">&#x27;./child&#x27;</span></span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">   asyncObject: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">   flag: <span class="literal">false</span></span><br><span class="line">  &#125;),</span><br><span class="line">  components: &#123;</span><br><span class="line">   child</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">   <span class="comment">// setTimeout模拟异步数据</span></span><br><span class="line">   <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.asyncObject = &#123;<span class="string">&#x27;items&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;</span><br><span class="line">    <span class="built_in">this</span>.flag = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;parent finish&#x27;</span>)</span><br><span class="line">   &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="child-vue"><a href="#child-vue" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">  子组件</span><br><span class="line">  &lt;!--不报错--&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;childObject.items[<span class="number">0</span>]&#125;&#125;&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: [<span class="string">&#x27;childObject&#x27;</span>],</span><br><span class="line">  data: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">  &#125;),</span><br><span class="line">  created () &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">this</span>.childObject)<span class="comment">// Object &#123;items: [1,2,3]&#125;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="办法二："><a href="#办法二：" class="headerlink" title="办法二："></a>办法二：</h3><p>​          子组件使用watch来监听父组件改变的prop，使用methods来代替created </p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/03/vue2%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%8F%8A%E6%97%B6%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-React-Component和PureComponent的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -917,73 +990,6 @@
 
 
   
-    <article id="post-Hbuild-和-微信开发工具" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/05/10/Hbuild-%E5%92%8C-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="article-date">
-      <time datetime="2021-05-10T10:04:50.000Z" itemprop="datePublished">2021-05-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/05/10/Hbuild-%E5%92%8C-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">Hbuild 和 微信开发工具</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="HbuilderX-搭配-微信开发者工具"><a href="#HbuilderX-搭配-微信开发者工具" class="headerlink" title="HbuilderX 搭配 微信开发者工具"></a>HbuilderX 搭配 微信开发者工具</h2><p><strong>HBuilderX是HBuilder的升级版。它是是DCloud（数字天堂）推出为前端开发者服务的通用IDE，或者称为编辑器</strong><br>在开发一些Vue项目的时候，使用 HBuilderX 还是蛮不错的，因为他对Vue的语法提示功能相当强大，这正适合懒惰的你，啊哈哈<br>并且HBuilerX也相当轻量级，占用内存很小，使用流畅，但是本人觉得，稳定性差一丢丢<br><strong>搭配 微信开发者工具</strong><br>在开发小程序或者多端程序的时候，肯定就会用到微信开发者工具了。<br>但是都知道，我的妈呀，微信开发者工具多难用，不流畅还不稳定，一度让人奔溃。<br>这时候我们就可以使用微信开发者工具进行调试，修改代码的话，在HBuilderX上进行就 OK 了。</p>
-<h2 id="HBuilderX-使用技巧"><a href="#HBuilderX-使用技巧" class="headerlink" title="HBuilderX 使用技巧"></a>HBuilderX 使用技巧</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2021/05/10/Hbuild-%E5%92%8C-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -995,7 +1001,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2022 薛成
+                &copy; 2023 薛成
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
