@@ -258,6 +258,83 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue懒加载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/" class="article-date">
+      <time datetime="2021-11-16T14:08:41.000Z" itemprop="datePublished">2021-11-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/">vue懒加载</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="vue项目实现路由按需加载-路由懒加载-的3种方式"><a href="#vue项目实现路由按需加载-路由懒加载-的3种方式" class="headerlink" title="vue项目实现路由按需加载(路由懒加载)的3种方式"></a>vue项目实现路由按需加载(路由懒加载)的3种方式</h2><ol>
+<li><h3 id="vue异步组件"><a href="#vue异步组件" class="headerlink" title="vue异步组件"></a>vue异步组件</h3></li>
+<li><h3 id="es提案的import"><a href="#es提案的import" class="headerlink" title="es提案的import()"></a>es提案的import()</h3></li>
+<li><h3 id="webpack的require-ensure"><a href="#webpack的require-ensure" class="headerlink" title="webpack的require,ensure()"></a>webpack的require,ensure()</h3></li>
+</ol>
+<h3 id="1-vue异步组件技术-异步加载"><a href="#1-vue异步组件技术-异步加载" class="headerlink" title="1 . vue异步组件技术 ==== 异步加载"></a>1 . vue异步组件技术 ==== 异步加载</h3><p>vue-router配置路由 , 使用vue的异步组件技术 , 可以实现按需加载 .<br>但是,这种情况下一个组件生成一个js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* vue异步组件技术 */</span></span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/home&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/home&#x27;</span>],resolve) &#125;,</span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/index&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Index&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/index&#x27;</span>],resolve) &#125;,</span><br><span class="line"></span><br><span class="line">&#123; <span class="attr">path</span>: <span class="string">&#x27;/about&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;about&#x27;</span>, <span class="attr">component</span>: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">&#x27;@/components/about&#x27;</span>],resolve) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-组件懒加载方案二-路由懒加载-使用import"><a href="#2-组件懒加载方案二-路由懒加载-使用import" class="headerlink" title="2.组件懒加载方案二 路由懒加载(使用import)"></a>2.组件懒加载方案二 路由懒加载(使用import)</h3>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/11/16/vue%E6%87%92%E5%8A%A0%E8%BD%BD/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-vue2父组件传递异步数据给子组件数据更新不及时和生命周期问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -896,80 +973,6 @@
       
         <p class="article-more-link">
           <a   href="/2021/05/18/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-uni-App" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/05/10/uni-App/" class="article-date">
-      <time datetime="2021-05-10T10:21:30.000Z" itemprop="datePublished">2021-05-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/05/10/uni-App/">uni-App</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="什么是-uni-App"><a href="#什么是-uni-App" class="headerlink" title="什么是 uni-App"></a>什么是 uni-App</h2><p><strong>uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。</strong><br>官网： <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/">https://uniapp.dcloud.io</a></p>
-<h2 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h2><h3 id="pages-json"><a href="#pages-json" class="headerlink" title="pages.json"></a>pages.json</h3><p>pages.json 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。</p>
-<h3 id="manifest-json"><a href="#manifest-json" class="headerlink" title="manifest.json"></a>manifest.json</h3><p>manifest.json 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>通过在package.json文件中增加uni-app扩展节点，可实现自定义条件编译平台（如钉钉小程序、微信服务号等平台）。</p>
-<h3 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h3><p>vue.config.js 是一个可选的配置文件，如果项目的根目录中存在这个文件，那么它会被自动加载，一般用于配置 webpack 等编译选项.</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" rel="tag">小程序 App Vue</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2021/05/10/uni-App/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>

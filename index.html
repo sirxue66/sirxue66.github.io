@@ -258,6 +258,78 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-JS预编译" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2023/02/20/JS%E9%A2%84%E7%BC%96%E8%AF%91/" class="article-date">
+      <time datetime="2023-02-20T08:36:21.000Z" itemprop="datePublished">2023-02-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2023/02/20/JS%E9%A2%84%E7%BC%96%E8%AF%91/">JS预编译</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="JS预编译"><a href="#JS预编译" class="headerlink" title="JS预编译"></a>JS预编译</h2><h3 id="全局js预编译"><a href="#全局js预编译" class="headerlink" title="全局js预编译"></a>全局js预编译</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ------------------------------------全局JS预编译---------------------------------------------</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 变量声明会提升，变量赋值不会提升</span></span><br><span class="line"><span class="comment"> * 函数整体会提升</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">fun(<span class="number">2</span>) <span class="comment">// 2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(text) <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> text = <span class="string">&quot;变量值&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="暗示全局变量"><a href="#暗示全局变量" class="headerlink" title="暗示全局变量"></a>暗示全局变量</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------------------------------暗示全局变量-----------------------------------------------</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 变量未声明，直接赋值，该变量会被提升到全部变量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">m = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(m)  <span class="comment">//2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tes</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = h = <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line">tes()</span><br><span class="line"><span class="built_in">console</span>.log(n)  <span class="comment">//报错</span></span><br><span class="line"><span class="built_in">console</span>.log(h)  <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数执行-预编译"><a href="#函数执行-预编译" class="headerlink" title="函数执行 预编译"></a>函数执行 预编译</h3>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2023/02/20/JS%E9%A2%84%E7%BC%96%E8%AF%91/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-搭建本地服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -954,80 +1026,6 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-项目部署篇" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2022/08/15/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/" class="article-date">
-      <time datetime="2022-08-15T01:29:10.000Z" itemprop="datePublished">2022-08-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2022/08/15/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/">项目部署篇</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="前后端项目部署-express-react"><a href="#前后端项目部署-express-react" class="headerlink" title="前后端项目部署 express+react"></a>前后端项目部署 express+react</h2><p>平常一直在做前端开发，就在单纯的开发项目代码，什么打包、部署的问题也没思考过什么，正好前不久心血来潮基于express+react做了一个小系统，用来练手，虽然功能不咋样，但是模块啥的总算是完成了，心想着自己前后台都整了，部署也得走一走吧，哈哈哈，就研究了一周末，赶紧把自己部署的过程总结一下。没部署过，不熟悉linux系统，做起来是挺费劲呀！<br><strong><em>准备工具，我个人推荐使用Xshell ，Xftp基本上操作远程服务器就够了</em></strong></p>
-<p>首先，你需要整台服务器，我用的是腾讯的，别问为什么，问就是我试用的，不要钱，哈哈哈哈。。。我的是一个轻量级服务器，用的CentOS7.6镜像。<br><img src="%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg" alt="服务器"></p>
-<p>首先购买服务器后，自己要重置一下密码，在使用Xshell连接的时候就可以使用密码连接了，当然你也可以使用密钥连接，我觉得密码简单罢了，只不过每次链接都得输入。<br><img src="jianlilianjie.jpg" alt="建立链接"><br><img src="mimadenglu.jpg" alt="密码登录"><br>当然Xftp也一样连接，咱们使用Xshell来操作linux命令，使用Xftp来给服务器上传压缩包文件之类的，真的超级方便。</p>
-<p>接下来就是准备环境了，因为我这是node写的后台，也比较简单，所以也不用docker之类的了。</p>
-<p><strong><em>需要安装的就是 node，pm2，mongodb（因为我用的mongo数据库）,和 nginx</em></strong></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2022/08/15/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/#more">查看更多 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
