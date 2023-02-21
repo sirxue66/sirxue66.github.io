@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,78 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-history路由部署到二级目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2023/02/21/history%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95/" class="article-date">
+      <time datetime="2023-02-21T09:42:29.000Z" itemprop="datePublished">2023-02-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2023/02/21/history%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95/">history路由部署到二级目录</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="history路由部署到服务器二级目录（vue-nginx）"><a href="#history路由部署到服务器二级目录（vue-nginx）" class="headerlink" title="history路由部署到服务器二级目录（vue+nginx）"></a>history路由部署到服务器二级目录（vue+nginx）</h2><h3 id="1，history路由添加二级路径"><a href="#1，history路由添加二级路径" class="headerlink" title="1，history路由添加二级路径"></a>1，history路由添加二级路径</h3><p><strong>*假设二级目录为 /subApp *</strong><br>添加base路径，即为你的二级部署路径，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">    history: createWebHistory(<span class="string">&quot;/subApp&quot;</span>),</span><br><span class="line">    routes,</span><br><span class="line">    scrollBehavior: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="attr">top</span>: <span class="number">0</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2，打包添加基础路径配置"><a href="#2，打包添加基础路径配置" class="headerlink" title="2，打包添加基础路径配置"></a>2，打包添加基础路径配置</h3><p>webpack打包配置资源基础路径，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = defineConfig(&#123;</span><br><span class="line">  publicPath: <span class="string">&quot;/subApp&quot;</span>,</span><br><span class="line">  outputDir: <span class="string">&quot;three_web3d&quot;</span>,</span><br><span class="line">  lintOnSave: <span class="literal">false</span>,</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3，nginx添加映射配置"><a href="#3，nginx添加映射配置" class="headerlink" title="3，nginx添加映射配置"></a>3，nginx添加映射配置</h3><p>nginx监听二级路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">            listen       <span class="number">8081</span>;</span><br><span class="line">            server_name  localhost;</span><br><span class="line">            root     D:<span class="regexp">/ThreeJs/</span>web3d;</span><br><span class="line"></span><br><span class="line">            location /subApp &#123;</span><br><span class="line">                try_files $uri $uri/ <span class="regexp">/subApp/i</span>ndex.html;</span><br><span class="line">                index index.html;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            location / &#123;</span><br><span class="line">                try_files $uri $uri/ /index.html;</span><br><span class="line">                index index.html;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="小技巧：github部署打包项目的时候，跳转路由报404的解决办法："><a href="#小技巧：github部署打包项目的时候，跳转路由报404的解决办法：" class="headerlink" title="小技巧：github部署打包项目的时候，跳转路由报404的解决办法："></a>小技巧：github部署打包项目的时候，跳转路由报404的解决办法：</h2><p><strong>* 由于github pages在找不到页面的时候，会先在index.html所在的路径下找有没有404.html页面，展示404.html页面，所以我们可以在index.html所在的路径下新建一个404.html，内容与index.html完全一样即可 *</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-%E9%83%A8%E7%BD%B2/" rel="tag">vue 部署</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-JS预编译" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -957,75 +1029,6 @@
         <p class="article-more-link">
           <a   href="/2022/08/31/%E6%AD%A3%E5%88%99%E7%AF%87/#more">查看更多 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css小记（一）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2022/08/18/css%E5%B0%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
-      <time datetime="2022-08-18T01:19:44.000Z" itemprop="datePublished">2022-08-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2022/08/18/css%E5%B0%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">css小记（一）</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="width-和-min-width对比"><a href="#width-和-min-width对比" class="headerlink" title="width 和 min-width对比"></a>width 和 min-width对比</h2><h3 id="一般情况下，width设置盒子宽度的固定值。-min-width设置盒子宽度的最小值。"><a href="#一般情况下，width设置盒子宽度的固定值。-min-width设置盒子宽度的最小值。" class="headerlink" title="一般情况下，width设置盒子宽度的固定值。 min-width设置盒子宽度的最小值。"></a>一般情况下，width设置盒子宽度的固定值。 min-width设置盒子宽度的最小值。</h3><h3 id="父元素设置为flex弹性布局的情况下"><a href="#父元素设置为flex弹性布局的情况下" class="headerlink" title="父元素设置为flex弹性布局的情况下"></a>父元素设置为flex弹性布局的情况下</h3><p>a、 子元素宽度和小于父元素时，同上，width设置盒子宽度的固定值。 min-width设置盒子宽度的最小值。</p>
-<p>b、子元素宽度和大于父元素时，width设置的盒子宽度会被压缩，具体宽度计算公式：  </p>
-<p>*<strong>子元素 宽度 = （该子元素宽度 / 所有子元素宽度和） * 父元素宽度*</strong></p>
-<p>而此时min-width设置的盒子宽度不会被压缩，盒子的最小宽度为 设置的min-width的值。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
