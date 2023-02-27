@@ -7,19 +7,19 @@
   
   
   
-  <title>搭建本地服务器 | XueSir Blog</title>
+  <title>发布npm包 | XueSir Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="搭建本地静态服务器问题描述对于现在的单页面应用，基本都有devServer的功能，实现开发时的热更新，比如：webcakpack、vite、parcel等打包工具，都有本地服务器热更新的功能。但是对于一些老的项目，原生的html，js页面，项目目录没有规律，有单独的js文件，或者js直接写在html中，并且html，js文件很多，上百个html等，使用webpack来启动本地项目就非常困难了，因为">
+  <meta name="description" content="发布npm包周末心血来潮，对图片滑块验证琢磨了一番，后来使用原生JS写了一个类，叫sliderverifyh5，使用纯JS，不依赖任何框架，对这次发布npm包做个记录吧源码地址预览地址 一 注册npm账号https:&#x2F;&#x2F;www.npmjs.com&#x2F;用户名、密码、邮箱验证完成 二 控制台登录npm1234567&#x2F;** * nrm是npm镜像管理工具，可快速管理镜像设置  全局安装nrm：npm in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建本地服务器">
-<meta property="og:url" content="https://sirxue66.github.io/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:title" content="发布npm包">
+<meta property="og:url" content="https://sirxue66.github.io/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/index.html">
 <meta property="og:site_name" content="XueSir Blog">
-<meta property="og:description" content="搭建本地静态服务器问题描述对于现在的单页面应用，基本都有devServer的功能，实现开发时的热更新，比如：webcakpack、vite、parcel等打包工具，都有本地服务器热更新的功能。但是对于一些老的项目，原生的html，js页面，项目目录没有规律，有单独的js文件，或者js直接写在html中，并且html，js文件很多，上百个html等，使用webpack来启动本地项目就非常困难了，因为">
+<meta property="og:description" content="发布npm包周末心血来潮，对图片滑块验证琢磨了一番，后来使用原生JS写了一个类，叫sliderverifyh5，使用纯JS，不依赖任何框架，对这次发布npm包做个记录吧源码地址预览地址 一 注册npm账号https:&#x2F;&#x2F;www.npmjs.com&#x2F;用户名、密码、邮箱验证完成 二 控制台登录npm1234567&#x2F;** * nrm是npm镜像管理工具，可快速管理镜像设置  全局安装nrm：npm in">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-13T07:14:37.000Z">
-<meta property="article:modified_time" content="2023-01-13T08:11:04.497Z">
+<meta property="article:published_time" content="2023-02-27T08:36:11.000Z">
+<meta property="article:modified_time" content="2023-02-27T09:38:20.448Z">
 <meta property="article:author" content="薛成">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="XueSir Blog" type="application/atom+xml">
@@ -258,11 +258,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-搭建本地服务器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-发布npm包" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
-      <time datetime="2023-01-13T07:14:37.000Z" itemprop="datePublished">2023-01-13</time>
+      <a  href="/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/" class="article-date">
+      <time datetime="2023-02-27T08:36:11.000Z" itemprop="datePublished">2023-02-27</time>
 </a>
 
     </div>
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      搭建本地服务器
+      发布npm包
     </h1>
   
 
@@ -292,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/" rel="tag">node</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,19 +302,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="搭建本地静态服务器"><a href="#搭建本地静态服务器" class="headerlink" title="搭建本地静态服务器"></a>搭建本地静态服务器</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于现在的单页面应用，基本都有devServer的功能，实现开发时的热更新，比如：webcakpack、vite、parcel等打包工具，都有本地服务器热更新的功能。但是对于一些老的项目，原生的html，js页面，项目目录没有规律，有单独的js文件，或者js直接写在html中，并且html，js文件很多，上百个html等，使用webpack来启动本地项目就非常困难了，因为文件目录没有规律可言。</p>
-<h3 id="原生开发问题："><a href="#原生开发问题：" class="headerlink" title="原生开发问题："></a>原生开发问题：</h3><p>原生项目，每次更改代码后，无论改动大小，都需要手动刷新页面，并且需要经常清空缓存并刷新页面，很是烦人；</p>
-<h3 id="使用live-server搭建本地开发服务器"><a href="#使用live-server搭建本地开发服务器" class="headerlink" title="使用live-server搭建本地开发服务器"></a>使用live-server搭建本地开发服务器</h3><p><strong><em>下载live-server</em></strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live-server -D</span><br></pre></td></tr></table></figure>
-<p><strong><em>1，命令行方式</em></strong><br>首先在项目下npm初始化:npm init -y;<br>然后可以选择全局安装或者本地安装live-server，然后在package.json的scripts属性中添加如下代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">        &quot;server&quot;: &quot;live-server ./ --port=8181 --host=localhost --proxy=/api:http://www.abc.com/api/&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>*<em>2，node方式**</em><br>使用npm init -y初始化一个目录，新建live-server.js作为配置文件，我的文件配置如下：</p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> liveServer = <span class="built_in">require</span>(<span class="string">&quot;live-server&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> glob = <span class="built_in">require</span>(<span class="string">&quot;glob&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> UIpath = process.argv.slice(<span class="number">2</span>,<span class="number">3</span>)[<span class="number">0</span>].toString();</span><br><span class="line"><span class="keyword">const</span> devPath = process.argv.slice(<span class="number">3</span>,<span class="number">4</span>)[<span class="number">0</span>].toString();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;启动目录---》&quot;</span>,UIpath,devPath);</span><br><span class="line"><span class="keyword">const</span> files = glob.sync(UIpath+<span class="string">&quot;/[0-9]*/&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> ignore = files.map(<span class="function"><span class="params">item</span> =&gt;</span> item.split(<span class="string">&quot;/&quot;</span>)[<span class="number">2</span>])</span><br><span class="line"><span class="comment">// console.log(&quot;子目录路径---》&quot;,ignore)</span></span><br><span class="line"><span class="keyword">const</span> whiteList = [<span class="string">&quot;99Common&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> whitePath = whiteList.concat(devPath);</span><br><span class="line"><span class="keyword">const</span> watchPath = whitePath.map(<span class="function"><span class="params">path</span> =&gt;</span> (<span class="string">`<span class="subst">$&#123;UIpath&#125;</span>/<span class="subst">$&#123;path&#125;</span>`</span>));</span><br><span class="line"><span class="keyword">const</span> ignorePath = ignore.filter(<span class="function"><span class="params">item</span> =&gt;</span> !whitePath.includes(item)).map(<span class="function"><span class="params">path</span> =&gt;</span> (<span class="string">`<span class="subst">$&#123;UIpath&#125;</span>/<span class="subst">$&#123;path&#125;</span>`</span>))</span><br><span class="line"><span class="comment">// console.log(&quot;监听文件路径---》&quot;,watchPath);</span></span><br><span class="line"><span class="comment">// console.log(&quot;忽略监听文件路径---》&quot;,ignorePath);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    port: <span class="number">8002</span>, <span class="comment">// Set the server port. Defaults to 8080.</span></span><br><span class="line">	host: <span class="string">&quot;0.0.0.0&quot;</span>, <span class="comment">// Set the address to bind to. Defaults to 0.0.0.0 or process.env.IP.</span></span><br><span class="line">	root: UIpath, <span class="comment">// String    Defaults to cwd.</span></span><br><span class="line">	open: <span class="literal">false</span>, <span class="comment">// When false, it won&#x27;t load your browser by default.</span></span><br><span class="line">    browser: <span class="string">&quot;Chrome&quot;</span>,</span><br><span class="line">	ignore: ignorePath, <span class="comment">//Array</span></span><br><span class="line">    <span class="comment">// watch: watchPath,   //Array</span></span><br><span class="line">	file: <span class="string">&quot;login.html&quot;</span>, <span class="comment">// When set, serve this file (server root relative) for every 404 (useful for single-page applications)</span></span><br><span class="line">	wait: <span class="number">1000</span>, <span class="comment">// Waits for all changes, before reloading. Defaults to 0 sec.</span></span><br><span class="line">	mount: [], </span><br><span class="line">	logLevel: <span class="number">2</span>, <span class="comment">// 0 = errors only, 1 = some, 2 = lots</span></span><br><span class="line">	proxy: [</span><br><span class="line">        [<span class="string">&#x27;/api&#x27;</span>,<span class="string">&#x27;http://0.0.0.0:8080/api&#x27;</span>]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">liveServer.start(config)</span><br></pre></td></tr></table></figure>
-<p>在package.json的scripts下添加如下代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;serve&quot;: &quot;node live-server.js ../UI 99System&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后执行npm run dev就启动就可以了。</p>
-<h3 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h3><p><strong><em>使用browser-sync实现热更新优化</em></strong><br><strong><em>使用node内置模块http启动服务</em></strong></p>
+        <h2 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h2><p><strong>周末心血来潮，对图片滑块验证琢磨了一番，后来使用原生JS写了一个类，叫sliderverifyh5，使用纯JS，不依赖任何框架，对这次发布npm包做个记录吧</strong><br><a target="_blank" rel="noopener" href="https://github.com/sirxue66/SliderVerify/tree/main/SliderVerify">源码地址</a><br><a href="https://sirxue66.github.io/SliderVerify/">预览地址</a></p>
+<h3 id="一-注册npm账号"><a href="#一-注册npm账号" class="headerlink" title="一 注册npm账号"></a>一 注册npm账号</h3><p><strong><a target="_blank" rel="noopener" href="https://www.npmjs.com/">https://www.npmjs.com/</a></strong><br>用户名、密码、邮箱验证完成</p>
+<h3 id="二-控制台登录npm"><a href="#二-控制台登录npm" class="headerlink" title="二 控制台登录npm"></a>二 控制台登录npm</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * nrm是npm镜像管理工具，可快速管理镜像设置  全局安装nrm：npm install -g nrm</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">nrm ls  <span class="comment">//显示所有镜像仓库</span></span><br><span class="line">nrm use npm  <span class="comment">//使用npm仓库，npm登录必须切换使用npm仓库</span></span><br><span class="line">npm login   <span class="comment">//登录npm</span></span><br><span class="line">npm logout   <span class="comment">//退出npm</span></span><br></pre></td></tr></table></figure>
+<h3 id="三-推送到npm仓库"><a href="#三-推送到npm仓库" class="headerlink" title="三 推送到npm仓库"></a>三 推送到npm仓库</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd 项目  <span class="comment">//进入自己项目目录</span></span><br><span class="line">npm publish  <span class="comment">//推送</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如果发现自己发布的包有问题，24小时内可使用如下命令撤销</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">npm unpublish 包名@版本号 --force</span><br></pre></td></tr></table></figure>
+<h3 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h3><p>如果<strong>npm login</strong> 或者 <strong>npm publish</strong>超时，可切换连接手机热点试试，屡试屡爽；<br>对于撤回的npm包，24小时内不可以再次提交；</p>
+<h3 id="推送报错的常见原因可能有："><a href="#推送报错的常见原因可能有：" class="headerlink" title="推送报错的常见原因可能有："></a>推送报错的常见原因可能有：</h3><p>检查仓库是否被设成了淘宝镜像库<br>包名重复 - package.json 中的name，改个名字。<br>npm账户没有验证邮箱 - 登陆npm官网验证邮箱。<br>vpn冲突 - 关掉所有vpn再试。</p>
 
       
     </div>
@@ -323,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">搭建本地服务器</a></p>
+        <p><span>本文标题:</span><a  href="/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/">发布npm包</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 薛副官 的个人博客">薛副官</a></p>
-        <p><span>发布时间:</span>2023年01月13日 - 15时14分</p>
-        <p><span>最后更新:</span>2023年01月13日 - 16时11分</p>
+        <p><span>发布时间:</span>2023年02月27日 - 16时36分</p>
+        <p><span>最后更新:</span>2023年02月27日 - 17时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="搭建本地服务器">https://sirxue66.github.io/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sirxue66.github.io/2023/01/13/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/　　作者: 薛副官" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/" title="发布npm包">https://sirxue66.github.io/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sirxue66.github.io/2023/02/27/%E5%8F%91%E5%B8%83npm%E5%8C%85/　　作者: 薛副官" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> 
@@ -341,18 +334,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2023/02/20/JS%E9%A2%84%E7%BC%96%E8%AF%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JS预编译
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2022/11/02/layui-%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">layui 弹出层关闭问题</div>
+    <a  href="/2023/02/21/history%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">history路由部署到二级目录</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -364,7 +348,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">搭建本地静态服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">原生开发问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8live-server%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">使用live-server搭建本地开发服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">其他方式</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83npm%E5%8C%85"><span class="toc-number">1.</span> <span class="toc-text">发布npm包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E6%B3%A8%E5%86%8Cnpm%E8%B4%A6%E5%8F%B7"><span class="toc-number">1.1.</span> <span class="toc-text">一 注册npm账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%99%BB%E5%BD%95npm"><span class="toc-number">1.2.</span> <span class="toc-text">二 控制台登录npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E6%8E%A8%E9%80%81%E5%88%B0npm%E4%BB%93%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">三 推送到npm仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">注：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E6%8A%A5%E9%94%99%E7%9A%84%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%AF%E8%83%BD%E6%9C%89%EF%BC%9A"><span class="toc-number">1.5.</span> <span class="toc-text">推送报错的常见原因可能有：</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -437,13 +421,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2023/02/20/JS%E9%A2%84%E7%BC%96%E8%AF%91/" title="上一篇: JS预编译">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2022/11/02/layui-%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/" title="下一篇: layui 弹出层关闭问题">
+            <a  href="/2023/02/21/history%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95/" title="下一篇: history路由部署到二级目录">
                 <i class="fa fa-angle-right"></i>
             </a>
         
