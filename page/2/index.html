@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,78 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-JS实用函数-来自VUE2源码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/10/09/JS%E5%AE%9E%E7%94%A8%E5%87%BD%E6%95%B0-%E6%9D%A5%E8%87%AAVUE2%E6%BA%90%E7%A0%81/" class="article-date">
+      <time datetime="2022-10-09T09:15:20.000Z" itemprop="datePublished">2022-10-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/10/09/JS%E5%AE%9E%E7%94%A8%E5%87%BD%E6%95%B0-%E6%9D%A5%E8%87%AAVUE2%E6%BA%90%E7%A0%81/">JS实用函数-来自VUE2源码</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="获取数据类型"><a href="#获取数据类型" class="headerlink" title="获取数据类型"></a>获取数据类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _toString = <span class="built_in">Object</span>.prototype.toString</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toRawType</span>(<span class="params">value: any</span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> _toString.call(value).slice(<span class="number">8</span>, -<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//是否对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj: any</span>): <span class="title">boolean</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> _toString.call(obj) === <span class="string">&#x27;[object Object]&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//是否正则</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isRegExp</span>(<span class="params">v: any</span>): <span class="title">v</span> <span class="title">is</span> <span class="title">RegExp</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> _toString.call(v) === <span class="string">&#x27;[object RegExp]&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//是否Promise</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isPromise</span>(<span class="params">val: any</span>): <span class="title">val</span> <span class="title">is</span> <span class="title">Promise</span>&lt;<span class="title">any</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    isDef(val) &amp;&amp;</span><br><span class="line">    <span class="keyword">typeof</span> val.then === <span class="string">&#x27;function&#x27;</span> &amp;&amp;</span><br><span class="line">    <span class="keyword">typeof</span> val.catch === <span class="string">&#x27;function&#x27;</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toString</span>(<span class="params">val: any</span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> val == <span class="literal">null</span></span><br><span class="line">    ? <span class="string">&#x27;&#x27;</span></span><br><span class="line">    : <span class="built_in">Array</span>.isArray(val) || (isPlainObject(val) &amp;&amp; val.toString === <span class="built_in">Object</span>.prototype.toString)</span><br><span class="line">    ? <span class="built_in">JSON</span>.stringify(val, <span class="literal">null</span>, <span class="number">2</span>)</span><br><span class="line">    : <span class="built_in">String</span>(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建一个映射并返回一个函数，用于检查键是否在该映射中。"><a href="#创建一个映射并返回一个函数，用于检查键是否在该映射中。" class="headerlink" title="创建一个映射并返回一个函数，用于检查键是否在该映射中。"></a>创建一个映射并返回一个函数，用于检查键是否在该映射中。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">makeMap</span>(<span class="params">str: string, expectsLowerCase?: boolean</span>): (<span class="params">key: string</span>) =&gt; <span class="title">true</span> | <span class="title">undefined</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> map = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line">  <span class="keyword">const</span> list: <span class="built_in">Array</span>&lt;string&gt; = str.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">    map[list[i]] = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> expectsLowerCase ? <span class="function"><span class="params">val</span> =&gt;</span> map[val.toLowerCase()] : <span class="function"><span class="params">val</span> =&gt;</span> map[val]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2022/10/09/JS%E5%AE%9E%E7%94%A8%E5%87%BD%E6%95%B0-%E6%9D%A5%E8%87%AAVUE2%E6%BA%90%E7%A0%81/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-iframe父子通信" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -918,82 +990,6 @@
       
         <p class="article-more-link">
           <a   href="/2022/01/11/webpack-01/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Vue3-一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2022/01/11/Vue3-%E4%B8%80/" class="article-date">
-      <time datetime="2022-01-11T13:54:34.000Z" itemprop="datePublished">2022-01-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2022/01/11/Vue3-%E4%B8%80/">Vue3(一)</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="VUE-3-0-新特性"><a href="#VUE-3-0-新特性" class="headerlink" title="VUE 3.0 新特性"></a><strong>VUE 3.0 新特性</strong></h1><h2 id="引入Tree-shaking"><a href="#引入Tree-shaking" class="headerlink" title="引入Tree-shaking"></a>引入Tree-shaking</h2><p>​     Vue3最重要的变化之一就是引入了Tree-Shaking，Tree-Shaking带来的bundle体积更小是显而易见的 。在2.x版本中，很多函数都挂载在全局Vue对象上，比如nextTick、nextTick、nextTick、set等函数，因此虽然我们可能用不到，但打包时只要引入了vue这些全局函数仍然会打包进bundle中。而在Vue3中，所有的API都通过ES6模块化的方式引入，这样就能让webpack或rollup等打包工具在打包时对没有用到API进行剔除，最小化bundle体积。</p>
-<p> vuex和vue-router也都使用了Tree-Shaking进行了改进 。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//src/store/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">  mutations: &#123;&#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//src/router/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">  history: createWebHistory(process.env.BASE_URL),</span><br><span class="line">  routes,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p> 在vue3中，新增了一个<code>setup</code>生命周期函数，setup执行的时机是在<code>beforeCreate</code>生命函数之前执行，因此在这个函数中是不能通过<code>this</code>来获取实例的 。</p>
-<p>​    setup<br>​    beforeCreate   （推荐使用 setup 代替）<br>​    created             （推荐使用 setup 代替）<br>​    beforeMount<br>​    mounted<br>​    beforeUpdate<br>​    update<br>​    beforeUnmount<br>​    unmounted</p>
-<p> vue3新增了生命周期钩子，我们可以通过在生命周期函数前加<code>on</code>来访问组件的生命周期。 我们在setup中挂载生命周期钩子，当执行到对应的生命周期时，就调用对应的钩子函数： </p>
-<p>​    onBeforeMount<br>​    onMounted<br>​    onBeforeUpdate<br>​    onUpdate<br>​    onBeforeUnmount<br>​    onUnmounted</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2022/01/11/Vue3-%E4%B8%80/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
