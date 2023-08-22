@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,78 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-变量作用域与解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="article-date">
+      <time datetime="2021-06-16T06:47:06.000Z" itemprop="datePublished">2021-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/">变量作用域与解构赋值</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="在javascript中，用var声明的变量实际上是有作用域的"><a href="#在javascript中，用var声明的变量实际上是有作用域的" class="headerlink" title="在javascript中，用var声明的变量实际上是有作用域的"></a>在javascript中，用var声明的变量实际上是有作用域的</h2><pre><code>如果一个变量在函数体内部申明，则该变量的作用域为整个函数体，在函数体外不可引用该变量：</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">    x = x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">x = x + <span class="number">2</span>; <span class="comment">// ReferenceError! 无法在函数体外引用变量x</span></span><br></pre></td></tr></table></figure>
+<pre><code>如果两个不同的函数各自申明了同一个变量，那么该变量只在各自的函数体内起作用。换句话说，不同函数内部的同名变量互相独立，互不影响。</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-认识浏览器" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -877,76 +949,6 @@ clear:right：清除该元素右边的浮动元素
 
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/04/13/git%E4%BD%BF%E7%94%A8/" class="article-date">
-      <time datetime="2021-04-13T01:46:37.000Z" itemprop="datePublished">2021-04-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/13/git%E4%BD%BF%E7%94%A8/">git使用</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h2><h3 id="git-是什么？"><a href="#git-是什么？" class="headerlink" title="git 是什么？"></a>git 是什么？</h3><p>git就是： 代码的版本管理工具<br>git工作流程：  工作区  –git add –&gt; 暂存区  –git commit–&gt;  版本区</p>
-<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><p>1，配置全局用户名： git config –global user.name ‘ ‘<br>2,配置全局邮箱：  git config –global user.email ‘ ‘<br>3,查看配置信息：  git config –list</p>
-<h3 id="增加-工作区—-gt-暂存区"><a href="#增加-工作区—-gt-暂存区" class="headerlink" title="增加    工作区—-&gt;暂存区"></a>增加    工作区—-&gt;暂存区</h3><p>1,增加所有更新文件： git add .<br>2,增加指定文件： git add 文件名</p>
-<h3 id="提交-暂存区—–-gt-版本区"><a href="#提交-暂存区—–-gt-版本区" class="headerlink" title="提交      暂存区—–&gt;版本区"></a>提交      暂存区—–&gt;版本区</h3><p>git commit -m “说明”</p>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>1,查看状态（工作区与暂存区之间的状态）： git status<br>2,查看提交记录（暂存区提交到版本区的提交记录）：git log</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2021/04/13/git%E4%BD%BF%E7%94%A8/#more">查看更多 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
