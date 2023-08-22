@@ -191,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+                        <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Net/" style="font-size: 10px;">Net</a> <a href="/tags/Proxy/" style="font-size: 10px;">Proxy</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bilibili/" style="font-size: 10px;">bilibili</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/layui/" style="font-size: 10px;">layui</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue-react/" style="font-size: 10px;">vue react</a> <a href="/tags/vue-%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">vue 部署</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-App-Vue/" style="font-size: 10px;">小程序 App Vue</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,84 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-webpack-01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/01/11/webpack-01/" class="article-date">
+      <time datetime="2022-01-11T13:58:02.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2022/01/11/webpack-01/">webpack-01</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="webpack-—-一"><a href="#webpack-—-一" class="headerlink" title="webpack  — (一)"></a><strong>webpack</strong>  — (一)</h1><p>commonJS规范：       module     ———-&gt;   require</p>
+<p>es6modules规范:       export           ————-&gt;   import</p>
+<p>webpack    是基于node 环境运行的  所以使用的是 commonJS规范  ( module.exports = { } )</p>
+<p>注（运行非全局安装的程序 ，可以使用 npx 在当前安装目录下 执行程序命令）</p>
+<p>webpack本身只能加载 js 和 html ，若要加载css 等需要使用 loader 进行转化</p>
+<h2 id="webpack配置项："><a href="#webpack配置项：" class="headerlink" title="webpack配置项："></a>webpack配置项：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">&#x27;./src/index.js&#x27;</span>,                                                   <span class="comment">//入口</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;bundle.js&#x27;</span>,        <span class="comment">//打包文件名</span></span><br><span class="line">        path: path.resolve(_dirname, <span class="string">&#x27;./dist&#x27;</span>),         <span class="comment">//打包文件位置</span></span><br><span class="line">        clean: <span class="literal">true</span>,         <span class="comment">//是否打包自动清除之前的打包文件</span></span><br><span class="line">        assetModuleFilename: <span class="string">&#x27;images/[contenthash][ext]&#x27;</span>,<span class="comment">//静态资源打包文件位置,文件名为生成的hash值加后缀</span></span><br><span class="line">    &#125;,                                                          <span class="comment">//出口</span></span><br><span class="line">    </span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,                                                  <span class="comment">//当前开发模式</span></span><br><span class="line">    </span><br><span class="line">    plugins:[],                   <span class="comment">//插件</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">module</span>: &#123;                       <span class="comment">//模块</span></span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.png$/</span>,                    <span class="comment">//处理.png图片</span></span><br><span class="line">                type: <span class="string">&#x27;asset/resource&#x27;</span>,           <span class="comment">//资源类型，以url方式引入</span></span><br><span class="line">                generator: &#123;            <span class="comment">//打包后的文件位置，优先级高于output中的位置</span></span><br><span class="line">                    filename: <span class="string">&#x27;images/[contexthash][ext]&#x27;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.svg$/</span>,             <span class="comment">//处理svg</span></span><br><span class="line">                type: <span class="string">&#x27;asset/inline&#x27;</span>         <span class="comment">//资源类型，以date也就是base64方式引入svg</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.txt$/</span>,         <span class="comment">//处理txt</span></span><br><span class="line">                type: <span class="string">&#x27;asset/source&#x27;</span>     <span class="comment">//引入类型，以 源码方式引入</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.jpg$/</span>,         <span class="comment">//处理 jpg</span></span><br><span class="line">                type: <span class="string">&#x27;asset&#x27;</span>     <span class="comment">//引入类型，自动选择类型（resource  inline），文件小的使用inline，文件大                                      的使用resource</span></span><br><span class="line">                parser: &#123;</span><br><span class="line">                	dataUrlCondition: &#123;</span><br><span class="line">                		maxSize: <span class="number">4</span>*<span class="number">1024</span>*<span class="number">1024</span>     <span class="comment">//设置使用resource还是inline的阈值，大于4M只用resource                                                   方式引入，小与4M 以inline方式引入</span></span><br><span class="line">            		&#125;</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.(woff | woff2 | eot | ttf | otf)$/</span>,        <span class="comment">//处理字体库</span></span><br><span class="line">    			type: <span class="string">&#x27;resource&#x27;</span></span><br><span class="line">			&#125;,</span><br><span class="line">    		<span class="comment">/** 使用loader*/</span></span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">    			use: [<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader&#x27;</span>]     <span class="comment">//调用顺序从后向前</span></span><br><span class="line">			&#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			 test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                  use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader&#x27;</span>,<span class="string">&#x27;less-loader&#x27;</span>]</span><br><span class="line">			&#125;,</span><br><span class="line">    		&#123;</span><br><span class="line">    			test: <span class="regexp">/\.js$/</span>,        <span class="comment">//使用bable转换ES6语法</span></span><br><span class="line">    			exclude: <span class="regexp">/node-modules/</span>,           <span class="comment">//排除node-modules中的js</span></span><br><span class="line">    			use: &#123;</span><br><span class="line">                    loader: <span class="string">&#x27;bable-loader&#x27;</span>,       </span><br><span class="line">                    options: &#123;</span><br><span class="line">                        presets: [<span class="string">&#x27;@bable/preset-env&#x27;</span>]     <span class="comment">//预设置，一组bable的集合 </span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">			&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    devServer: &#123;           <span class="comment">//实时加载页面更新  安装 webpack-dev-servre插件</span></span><br><span class="line">        <span class="keyword">static</span>: <span class="string">&#x27;./dist&#x27;</span></span><br><span class="line">    &#125;,          </span><br><span class="line">    </span><br><span class="line">    devtool: <span class="string">&#x27;inline-source-map&#x27;</span>,           <span class="comment">//定位压缩代码报错位置</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="html-webpack-plugin-插件："><a href="#html-webpack-plugin-插件：" class="headerlink" title="html-webpack-plugin 插件："></a>html-webpack-plugin 插件：</h3><p>​    自定加载生成 index.html文件到打包目录下</p>
+<p>​    实例化：  new html-webpack-plugin();</p>
+<p>​    简单配置： </p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2022/01/11/webpack-01/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Vue3-一" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -919,79 +997,6 @@
       
         <p class="article-more-link">
           <a   href="/2021/06/16/%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-认识浏览器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/06/16/%E8%AE%A4%E8%AF%86%E6%B5%8F%E8%A7%88%E5%99%A8/" class="article-date">
-      <time datetime="2021-06-16T05:38:19.000Z" itemprop="datePublished">2021-06-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/06/16/%E8%AE%A4%E8%AF%86%E6%B5%8F%E8%A7%88%E5%99%A8/">认识浏览器</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="window-表示浏览器窗口"><a href="#window-表示浏览器窗口" class="headerlink" title="window 表示浏览器窗口"></a>window 表示浏览器窗口</h2><p> window对象有innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。<br> 对应的，还有一个outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽高。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;window inner size: &#x27;</span> + <span class="built_in">window</span>.innerWidth + <span class="string">&#x27; x &#x27;</span> + <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure>
-<h2 id="navigator-对象表示浏览器的信息"><a href="#navigator-对象表示浏览器的信息" class="headerlink" title="navigator 对象表示浏览器的信息"></a>navigator 对象表示浏览器的信息</h2><p>属性有：<br>    navigator.appName：浏览器名称；<br>    navigator.appVersion：浏览器版本；<br>    navigator.language：浏览器设置的语言；<br>    navigator.platform：操作系统类型；<br>    navigator.userAgent：浏览器设定的User-Agent字符串。</p>
-<h2 id="screen-表示屏幕的信息"><a href="#screen-表示屏幕的信息" class="headerlink" title="screen 表示屏幕的信息"></a>screen 表示屏幕的信息</h2><p>属性有：<br>    screen.width：屏幕宽度，以像素为单位；<br>    screen.height：屏幕高度，以像素为单位；<br>    screen.colorDepth：返回颜色位数，如8、16、24。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/" rel="tag">browser</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2021/06/16/%E8%AE%A4%E8%AF%86%E6%B5%8F%E8%A7%88%E5%99%A8/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
